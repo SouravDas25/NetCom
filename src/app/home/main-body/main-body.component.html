@@ -14,18 +14,18 @@
             <tbody>
             <tr>
               <th scope="row ">Mime-Type</th>
-              <td class="w-50 text-break">{{ networkTraffic['mimeType'] }}</td>
-              <td class="w-50 text-break">Otto</td>
+              <td class="w-50 text-break">{{ networkTraffic1['mimeType'] }}</td>
+              <td class="w-50 text-break">{{ networkTraffic2['mimeType'] }}</td>
             </tr>
             <tr>
               <th scope="row">Charset</th>
-              <td class="w-50 text-break">{{ networkTraffic['charset'] }}</td>
-              <td class="w-50 text-break">Thornton</td>
+              <td class="w-50 text-break">{{ networkTraffic1['charset'] }}</td>
+              <td class="w-50 text-break">{{ networkTraffic2['charset'] }}</td>
             </tr>
             <tr>
               <th scope="row">Content-Encoding</th>
-              <td class="w-50 text-break">{{ networkTraffic['contentEncoding'] }}</td>
-              <td class="w-50 text-break">the Bird</td>
+              <td class="w-50 text-break">{{ networkTraffic1['contentEncoding'] }}</td>
+              <td class="w-50 text-break">{{ networkTraffic2['contentEncoding'] }}</td>
             </tr>
             </tbody>
           </table>
@@ -53,8 +53,13 @@
           </div>
         </tab>
         <tab heading="Raw">
-          <div class="well well-lg card card-block card-header">
-            <pre>{{ this.networkTraffic | json }}</pre>
+          <div class="well well-lg card card-header">
+            <div class="">
+              <pre>{{ this.networkTraffic1 | json }}</pre>
+            </div>
+            <div class="">
+              <pre>{{ this.networkTraffic2 | json }}</pre>
+            </div>
           </div>
         </tab>
       </tabset>

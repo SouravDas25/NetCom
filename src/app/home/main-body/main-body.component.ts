@@ -12,6 +12,7 @@ import {
 import {AccordionConfig} from 'ngx-bootstrap/accordion';
 import {DiffResults} from 'ngx-text-diff/lib/ngx-text-diff.model';
 import {NgxTextDiffComponent} from "ngx-text-diff";
+import {NetworkLogsHelper} from "../../shared/helpers/NetworkLogsHelper";
 
 export function getAccordionConfig(): AccordionConfig {
   return Object.assign(new AccordionConfig(), {closeOthers: true});
@@ -25,7 +26,8 @@ export function getAccordionConfig(): AccordionConfig {
 })
 export class MainBodyComponent implements OnChanges, OnDestroy {
 
-  @Input() networkTraffic: Object;
+  @Input() networkTraffic1: Object;
+  @Input() networkTraffic2: Object;
   @Input() displayName: string;
 
   isRequestCollapsed = false;
@@ -40,11 +42,11 @@ export class MainBodyComponent implements OnChanges, OnDestroy {
   }
 
   get left() {
-    return JSON.stringify(this.networkTraffic['body'], null, 4);
+    return JSON.stringify(this.networkTraffic1['body'], null, 4);
   }
 
   get right() {
-    return JSON.stringify(this.networkTraffic['body'], null, 4);
+    return JSON.stringify(this.networkTraffic2['body'], null, 4);
   }
 
   createComponent() {
@@ -63,13 +65,11 @@ export class MainBodyComponent implements OnChanges, OnDestroy {
     }
 
     this.requestHeaders = [];
-    let headers: Array<Object> = this.networkTraffic['header']['headers'];
+    let headers1: Array<Object> = this.networkTraffic1['header']['headers'];
+    let headers2: Array<Object> = this.networkTraffic2['header']['headers'];
     // console.log(headers);
-    if (headers) {
-      headers.forEach((item) => {
-        item['value2'] = item['value'];
-        this.requestHeaders.push(item);
-      });
+    if (headers1 && headers2) {
+      this.requestHeaders = NetworkLogsHelper.mergeHeaders(headers1, headers2);
     }
 
   }

@@ -14,6 +14,7 @@ import {CollapseModule} from 'ngx-bootstrap/collapse';
 import {NgxTextDiffComponent, NgxTextDiffModule} from 'ngx-text-diff';
 import {TabsModule} from 'ngx-bootstrap/tabs';
 import {ButtonsModule} from 'ngx-bootstrap/buttons';
+import {TooltipModule} from 'ngx-bootstrap/tooltip';
 
 @NgModule({
   declarations: [HomeComponent, MainBodyComponent],
@@ -21,7 +22,8 @@ import {ButtonsModule} from 'ngx-bootstrap/buttons';
     HomeComponent
   ],
   imports: [CommonModule, SharedModule, HomeRoutingModule, FontAwesomeModule,
-    AccordionModule, BrowserAnimationsModule, CollapseModule, NgxTextDiffModule, TabsModule.forRoot(), ButtonsModule],
+    AccordionModule, BrowserAnimationsModule, CollapseModule, NgxTextDiffModule, TabsModule.forRoot(), ButtonsModule,
+    TooltipModule.forRoot()],
   entryComponents: [NgxTextDiffComponent]
 })
 export class HomeModule {
