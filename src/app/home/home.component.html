@@ -44,7 +44,22 @@
       </li>
     </ul>
     <div class="col-9">
-      <app-main-body *ngIf="selectedItem" [selectedLogItem]="selectedItem" ></app-main-body>
+      <br>
+
+
+      <div *ngIf="selectedItem">
+        <kbd class="my-2 mr-2">{{ selectedItem.method }}</kbd>
+        <code><b>{{selectedItem.scheme}}://{{ selectedItem.host }}</b> {{ selectedItem.path }}</code>
+        <br>
+        query:
+        <code> ?{{ selectedItem.query }}</code>
+      </div>
+
+      <app-main-body *ngIf="selectedItem" [displayName]="'Request'"
+                     [networkTraffic]="selectedItem['request']"></app-main-body>
+
+      <app-main-body *ngIf="selectedItem" [displayName]="'Response'"
+                     [networkTraffic]="selectedItem['response']"></app-main-body>
     </div>
   </div>
 </div>

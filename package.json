@@ -99,6 +99,8 @@
     "@fortawesome/free-solid-svg-icons": "5.12.1",
     "bootstrap": "4.4.1",
     "jquery": "3.4.1",
-    "ngx-bootstrap": "5.5.0"
+    "ngx-bootstrap": "5.5.0",
+    "ngx-text-diff": "0.5.4",
+    "ts-md5": "1.2.7"
   }
 }

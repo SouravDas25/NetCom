@@ -11,6 +11,9 @@ import {MainBodyComponent} from "./main-body/main-body.component";
 import {AccordionModule} from "ngx-bootstrap";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CollapseModule} from 'ngx-bootstrap/collapse';
+import {NgxTextDiffComponent, NgxTextDiffModule} from 'ngx-text-diff';
+import {TabsModule} from 'ngx-bootstrap/tabs';
+import {ButtonsModule} from 'ngx-bootstrap/buttons';
 
 @NgModule({
   declarations: [HomeComponent, MainBodyComponent],
@@ -18,7 +21,8 @@ import {CollapseModule} from 'ngx-bootstrap/collapse';
     HomeComponent
   ],
   imports: [CommonModule, SharedModule, HomeRoutingModule, FontAwesomeModule,
-    AccordionModule, BrowserAnimationsModule, CollapseModule]
+    AccordionModule, BrowserAnimationsModule, CollapseModule, NgxTextDiffModule, TabsModule.forRoot(), ButtonsModule],
+  entryComponents: [NgxTextDiffComponent]
 })
 export class HomeModule {
 }

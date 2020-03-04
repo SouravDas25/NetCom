@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NetworkLogsHelper} from "../shared/helpers/NetworkLogsHelper";
-import { faFilter } from '@fortawesome/free-solid-svg-icons';
+import {faFilter} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -23,8 +23,9 @@ export class HomeComponent implements OnInit {
   }
 
   async loadData() {
-    this.networkLog = await NetworkLogsHelper.filterNetworkLogs();
-    this.items = this.networkLog;
+    this.networkLog = await NetworkLogsHelper.getComparedNetworkTraffic();
+    console.log(this.networkLog);
+    // this.items = this.networkLog;
   }
 
   onClick(item) {

@@ -1,6 +1,17 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {
+  Component,
+  ComponentFactory,
+  ComponentFactoryResolver,
+  ComponentRef,
+  Input,
+  OnChanges,
+  OnDestroy,
+  ViewChild,
+  ViewContainerRef
+} from '@angular/core';
 import {AccordionConfig} from 'ngx-bootstrap/accordion';
-
+import {DiffResults} from 'ngx-text-diff/lib/ngx-text-diff.model';
+import {NgxTextDiffComponent} from "ngx-text-diff";
 
 export function getAccordionConfig(): AccordionConfig {
   return Object.assign(new AccordionConfig(), {closeOthers: true});
@@ -12,18 +23,68 @@ export function getAccordionConfig(): AccordionConfig {
   styleUrls: ['./main-body.component.css'],
   providers: [{provide: AccordionConfig, useFactory: getAccordionConfig}]
 })
-export class MainBodyComponent implements OnInit {
+export class MainBodyComponent implements OnChanges, OnDestroy {
 
-  @Input() selectedLogItem: Object;
+  @Input() networkTraffic: Object;
+  @Input() displayName: string;
 
   isRequestCollapsed = false;
-  isResponseCollapsed = false;
+  isDiffVisible = false;
 
+  requestHeaders: Array<Object> = [];
 
-  constructor() {
+  @ViewChild("diffContainer", {read: ViewContainerRef}) container: ViewContainerRef;
+  private componentRef: ComponentRef<NgxTextDiffComponent>;
+
+  constructor(private resolver: ComponentFactoryResolver) {
   }
 
-  ngOnInit(): void {
+  get left() {
+    return JSON.stringify(this.networkTraffic['body'], null, 4);
   }
+
+  get right() {
+    return JSON.stringify(this.networkTraffic['body'], null, 4);
+  }
+
+  createComponent() {
+    this.container.clear();
+    const factory: ComponentFactory<NgxTextDiffComponent> = this.resolver.resolveComponentFactory(NgxTextDiffComponent);
+    this.componentRef = this.container.createComponent(factory);
+    this.componentRef.instance.left = this.left;
+    this.componentRef.instance.right = this.right;
+    this.isDiffVisible = true;
+  }
+
+  ngOnChanges(): void {
+
+    if (this.container != null) {
+      this.createComponent()
+    }
+
+    this.requestHeaders = [];
+    let headers: Array<Object> = this.networkTraffic['header']['headers'];
+    // console.log(headers);
+    if (headers) {
+      headers.forEach((item) => {
+        item['value2'] = item['value'];
+        this.requestHeaders.push(item);
+      });
+    }
+
+  }
+
+  destroyComponent() {
+    this.componentRef.destroy();
+  }
+
+  onCompareResults(diffResults: DiffResults) {
+    console.log('diffResults', diffResults);
+  }
+
+  ngOnDestroy(): void {
+    this.destroyComponent();
+  }
+
 
 }
