@@ -1,0 +1,52 @@
+<br>
+
+<div>
+  <kbd class="my-2 mr-2">{{ selectedLogItem.method }}</kbd>
+  <code><b>{{selectedLogItem.scheme}}://{{ selectedLogItem.host }}</b> {{ selectedLogItem.path }}</code>
+  <br>
+  query:
+  <code> ?{{ selectedLogItem.query }}</code>
+</div>
+<br>
+<button type="button" class="btn btn-primary" (click)="isRequestCollapsed = !isRequestCollapsed"
+        [attr.aria-expanded]="!isRequestCollapsed" aria-controls="collapseBasic">
+  Request
+</button>
+<hr>
+<div id="collapseBasic" [collapse]="isRequestCollapsed" [isAnimated]="true">
+  <div class="well well-lg card card-block card-header">
+    <table class="table">
+      <caption>request comparision</caption>
+      <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+      </tr>
+      </tbody>
+    </table>
+    <pre>{{ selectedLogItem.request | json }}</pre>
+  </div>
+</div>
+
+<br>
+<button type="button" class="btn btn-primary" (click)="isResponseCollapsed = !isResponseCollapsed"
+        [attr.aria-expanded]="!isResponseCollapsed" aria-controls="collapseBasic">
+  Response
+</button>
+<hr>
+<div id="collapseBasic2" [collapse]="isResponseCollapsed" [isAnimated]="true">
+  <div class="well well-lg card card-block card-header">
+    <pre>{{ selectedLogItem.response | json }}</pre>
+  </div>
+</div>
