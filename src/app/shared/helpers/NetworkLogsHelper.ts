@@ -6,8 +6,30 @@ const util = require('util');
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 
+function isObject(v) {
+  return '[object Object]' === Object.prototype.toString.call(v);
+};
+
 
 export class NetworkLogsHelper {
+
+  public static jsonSort(o) {
+    if (Array.isArray(o)) {
+      return o.sort().map(NetworkLogsHelper.jsonSort);
+    } else if (isObject(o)) {
+      return Object
+        .keys(o)
+        .sort()
+        .reduce(function (a, k) {
+          a[k] = NetworkLogsHelper.jsonSort(o[k]);
+
+          return a;
+        }, {});
+    }
+
+    return o;
+  }
+
 
   public static async loadJsonFile(filename: string): Promise<Array<Object>> {
     let data;
@@ -23,11 +45,11 @@ export class NetworkLogsHelper {
   }
 
   public static async loadNetworkLogs(): Promise<Array<Object>> {
-    return await this.loadJsonFile('./networkLogs/network.json');
+    return await this.loadJsonFile('./networkLogs/session1.json');
   }
 
   public static async loadControlLogs(): Promise<Array<Object>> {
-    return await this.loadJsonFile('./networkLogs/control.json');
+    return await this.loadJsonFile('./networkLogs/session2.json');
   }
 
   public static async saveNetworkLogs(data): Promise<Boolean> {
@@ -88,27 +110,34 @@ export class NetworkLogsHelper {
     return networkTraffic;
   }
 
+  public static jsonifyBody(item, key) {
+
+    let traffic = item[key];
+    if (traffic != null) {
+
+      let body = traffic['body'];
+      if (body != null) {
+        body = body['text'];
+        // console.log(body);
+        if (body != null) {
+          try {
+            item[key]['body'] = JSON.parse(body);
+            item[key]['body'] = NetworkLogsHelper.jsonSort(item[key]['body']);
+          } catch (e) {
+            item[key]['body'] = body;
+          }
+        }
+      }
+    }
+  }
 
   public static async filterNetworkTraffic(networkLogs) {
     let data = [];
     networkLogs.forEach((item) => {
 
-      let request = item['request'];
-      if (request != null) {
 
-        let body = request['body'];
-        if (body != null) {
-          body = body['text'];
-          // console.log(body);
-          if (body != null) {
-            try {
-              item['request']['body'] = JSON.parse(body);
-            } catch (e) {
-              item['request']['body'] = body;
-            }
-          }
-        }
-      }
+      NetworkLogsHelper.jsonifyBody(item, 'request');
+      NetworkLogsHelper.jsonifyBody(item, 'response');
 
 
       item['name'] = null;
