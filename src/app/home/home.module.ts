@@ -16,6 +16,8 @@ import {TabsModule} from 'ngx-bootstrap/tabs';
 import {ButtonsModule} from 'ngx-bootstrap/buttons';
 import {TooltipModule} from 'ngx-bootstrap/tooltip';
 
+import {ToastrModule} from 'ngx-toastr';
+
 @NgModule({
   declarations: [HomeComponent, MainBodyComponent],
   exports: [
@@ -23,7 +25,9 @@ import {TooltipModule} from 'ngx-bootstrap/tooltip';
   ],
   imports: [CommonModule, SharedModule, HomeRoutingModule, FontAwesomeModule,
     AccordionModule, BrowserAnimationsModule, CollapseModule, NgxTextDiffModule, TabsModule.forRoot(), ButtonsModule,
-    TooltipModule.forRoot()],
+    TooltipModule.forRoot(),
+    ToastrModule.forRoot(),
+  ],
   entryComponents: [NgxTextDiffComponent]
 })
 export class HomeModule {

@@ -87,5 +87,18 @@ export class ShellExecutorHelper {
     }
   }
 
+  public static async runWebAutomation(): Promise<void> {
+    try {
+      const {stdout, stderr} = await exec('cd /Users/i353584/Desktop/SeleniumScript && python3 /Users/i353584/Desktop/SeleniumScript/requestAutomationScript.py');
+      console.log('stdout:', stdout);
+      console.log('stderr:', stderr);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+
+
+
 
 }

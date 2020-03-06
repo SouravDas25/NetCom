@@ -44,12 +44,14 @@ export class NetworkLogsHelper {
     }
   }
 
-  public static async loadNetworkLogs(): Promise<Array<Object>> {
-    return await this.loadJsonFile('./networkLogs/session1.json');
+  public static async loadNetworkLogs(fallback: Boolean = false): Promise<Array<Object>> {
+    let filename = fallback ? 'network.json' : 'session1.json';
+    return await this.loadJsonFile(`./networkLogs/${filename}`);
   }
 
-  public static async loadControlLogs(): Promise<Array<Object>> {
-    return await this.loadJsonFile('./networkLogs/session2.json');
+  public static async loadControlLogs(fallback: Boolean = false): Promise<Array<Object>> {
+    let filename = fallback ? 'control.json' : 'session2.json';
+    return await this.loadJsonFile(`./networkLogs/${filename}`);
   }
 
   public static async saveNetworkLogs(data): Promise<Boolean> {
@@ -72,9 +74,9 @@ export class NetworkLogsHelper {
     return <string>md5.end();
   }
 
-  public static async getComparedNetworkTraffic() {
-    let networkLogs = await NetworkLogsHelper.loadNetworkLogs();
-    let controlLogs = await NetworkLogsHelper.loadControlLogs();
+  public static async getComparedNetworkTraffic(fallback: Boolean = false) {
+    let networkLogs = await NetworkLogsHelper.loadNetworkLogs(fallback);
+    let controlLogs = await NetworkLogsHelper.loadControlLogs(fallback);
     networkLogs = await this.filterNetworkTraffic(networkLogs);
     controlLogs = await this.filterNetworkTraffic(controlLogs);
 

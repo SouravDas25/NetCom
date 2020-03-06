@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NetworkLogsHelper} from "../shared/helpers/NetworkLogsHelper";
 import {faFilter, faMicrophone, faStopCircle, faTrash, faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import {ShellExecutorHelper} from "../shared/helpers/ShellExecutorHelper";
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-home',
@@ -21,20 +22,23 @@ export class HomeComponent implements OnInit {
   selectedItem;
 
   isCharlesRunning: Boolean = false;
+  isRecoding: Boolean = false;
 
   is1stCompleted: Boolean = false;
   is2stCompleted: Boolean = false;
 
-  constructor() {
+  isWebAutomationRunning: Boolean = false;
+
+  constructor(private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
     this.loadData();
   }
 
-  async loadData() {
-    this.networkLog = await NetworkLogsHelper.getComparedNetworkTraffic();
-    // console.log(this.networkLog);
+  async loadData(fallback: boolean = false) {
+    this.networkLog = await NetworkLogsHelper.getComparedNetworkTraffic(fallback);
+    console.log(this.networkLog);
     this.items = this.networkLog;
   }
 
@@ -52,22 +56,62 @@ export class HomeComponent implements OnInit {
   }
 
   startRecoding() {
+    if (!this.isCharlesRunning) {
+      this.toastr.info("Charles is not running, please start charles first.");
+      return;
+    }
+    if (!this.is1stCompleted) {
+      this.toastr.info("Please record the web first.");
+      return;
+    }
     ShellExecutorHelper.startRecording();
+    this.isRecoding = true;
   }
 
   clearSession() {
+    if (!this.isCharlesRunning) {
+      this.toastr.info("Charles is not running, please start charles first.");
+      return;
+    }
     ShellExecutorHelper.clearSession();
   }
 
   completeRecording() {
+    if (!this.isCharlesRunning) {
+      this.toastr.info("Charles is not running, please start charles first.");
+      return;
+    }
+    if (!this.isRecoding) {
+      this.toastr.error("Recording should be on to stop it.");
+      return;
+    }
     ShellExecutorHelper.completeRecording(this.is1stCompleted ? "session2" : "session1");
     if (!this.is1stCompleted) this.is1stCompleted = true;
     else this.is2stCompleted = true;
 
+    this.isRecoding = false;
+
     if (this.is1stCompleted && this.is2stCompleted) {
-      this.loadData();
+      this.loadData(true);
     }
   }
 
 
+  async runWebAutomation() {
+    if (!this.isCharlesRunning) {
+      this.toastr.info("Charles is not running, please start charles first.");
+      return;
+    }
+    try {
+      this.isWebAutomationRunning = true;
+      await ShellExecutorHelper.runWebAutomation();
+      this.is1stCompleted = true;
+    }
+    catch (e) {
+      this.toastr.error("Error Occurred while running Web Automation.");
+    }
+    finally {
+      this.isWebAutomationRunning = false;
+    }
+  }
 }

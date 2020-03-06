@@ -4,7 +4,7 @@
   <!--  </h1>-->
   <div class="row border-bottom">
     <div class="col-md-12">
-      <h2>NetCMP</h2>
+      <h2>NetCMP <small class="text-monospace">S2I</small></h2>
       <div aria-label="Toolbar with button groups" class="btn-toolbar mb-3" role="toolbar">
 
         <div class="btn-group mr-2" role="group" aria-label="Start">
@@ -15,7 +15,10 @@
         </div>
 
         <div aria-label="clear-group" class="btn-group mr-2" role="group">
-          <button class="btn {{ is1stCompleted ? 'btn-primary' : 'btn-light' }} border" type="button" >
+          <button class="btn {{ is1stCompleted ? 'btn-primary' : 'btn-light' }} border"
+                  type="button" (click)="runWebAutomation()">
+            <span *ngIf="isWebAutomationRunning" class="spinner-border spinner-border-sm" role="status"
+                  aria-hidden="true"></span>
             web
           </button>
           <button class="btn {{ is2stCompleted ? 'btn-primary' : 'btn-light' }} border" type="button">
@@ -29,7 +32,8 @@
           </button>
         </div>
         <div aria-label="First group" class="btn-group mr-2 " role="group">
-          <button class="btn btn-light border text-info" placement="bottom" tooltip="record" type="button"
+          <button class="btn btn-light border text-info {{ isRecoding ? 'active' : '' }}" placement="bottom"
+                  tooltip="record" type="button"
                   (click)="startRecoding()">
             <fa-icon [icon]="faMicrophone"></fa-icon>
           </button>
