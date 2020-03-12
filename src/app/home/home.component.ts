@@ -1,6 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {NetworkLogsHelper} from "../shared/helpers/NetworkLogsHelper";
-import {faFilter, faMicrophone, faStopCircle, faTrash, faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowDown,
+  faArrowRight,
+  faArrowUp,
+  faCheck,
+  faFilter,
+  faMicrophone,
+  faStopCircle,
+  faTrash
+} from '@fortawesome/free-solid-svg-icons';
 import {ShellExecutorHelper} from "../shared/helpers/ShellExecutorHelper";
 import {ToastrService} from 'ngx-toastr';
 
@@ -16,6 +25,9 @@ export class HomeComponent implements OnInit {
   faMicrophone = faMicrophone;
   faStopCircle = faStopCircle;
   faArrowRight = faArrowRight;
+  faArrowUp = faArrowUp;
+  faArrowDown = faArrowDown;
+  faCheck = faCheck;
 
   networkLog = [];
   items = [];
