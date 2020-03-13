@@ -2,9 +2,9 @@
   <!--  <h1 class="title">-->
   <!--    {{ 'PAGES.HOME.TITLE' | translate }}-->
   <!--  </h1>-->
-  <div class="row border-bottom">
+  <div class="row border-bottom ">
     <div class="col-md-12">
-      <h2>NetCMP <small class="text-monospace">S2I</small></h2>
+      <h1 class="pt-3 pb-2">NetCMP <small class="text-monospace">S2I</small></h1>
       <div aria-label="Toolbar with button groups" class="btn-toolbar mb-3" role="toolbar">
 
         <div class="btn-group mr-2" role="group" aria-label="Start">
@@ -79,7 +79,7 @@
         <span class="badge badge-primary badge-pill">match</span>
       </li>
     </ul>
-    <div class="col-9">
+    <div class="col-9 {{ selectedItem ? 'card' : '' }} ">
       <br>
 
 

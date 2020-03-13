@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadData();
+    this.loadData(false);
   }
 
   async loadData(fallback: boolean = false) {
