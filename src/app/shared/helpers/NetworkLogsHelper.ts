@@ -1,5 +1,7 @@
 import {Md5} from 'ts-md5/dist/md5';
 
+var Multimap = require('multimap');
+
 const fs = require('fs');
 const util = require('util');
 
@@ -8,7 +10,7 @@ const writeFile = util.promisify(fs.writeFile);
 
 function isObject(v) {
   return '[object Object]' === Object.prototype.toString.call(v);
-};
+}
 
 
 export class NetworkLogsHelper {
@@ -82,7 +84,7 @@ export class NetworkLogsHelper {
 
     let networkTraffic = [];
 
-    let mergeCollection = new Map();
+    let mergeCollection = new Multimap();
 
 
     networkLogs.forEach((item) => {
@@ -91,9 +93,16 @@ export class NetworkLogsHelper {
     });
 
     controlLogs.forEach((item) => {
+      if (item == null) return;
       let hashStr = NetworkLogsHelper.hashTraffic(item);
 
       if (mergeCollection.has(hashStr)) {
+        let values: Array<Object> = mergeCollection.get(hashStr);
+        let item2 = values[0];
+        if (item2 == null) return;
+        mergeCollection.delete(hashStr, item2);
+        let isResponseDiff = JSON.stringify(item2['response']['body']) != JSON.stringify(item['response']['body']);
+        let isRequestDiff = JSON.stringify(item2['request']['body']) != JSON.stringify(item['request']['body']);
         networkTraffic.push({
           "name": item['name'],
           "host": item['host'],
@@ -101,14 +110,16 @@ export class NetworkLogsHelper {
           "path": item['path'],
           "scheme": item['scheme'],
           "query": item['query'],
-          "traffic1": mergeCollection.get(hashStr),
+          "isResponseDiff": isResponseDiff,
+          "isRequestDiff": isRequestDiff,
+          "traffic1": item2,
           "traffic2": item,
         });
       } else {
         mergeCollection.set(hashStr, item);
       }
     });
-
+    // console.log(networkTraffic);
     return networkTraffic;
   }
 
@@ -140,7 +151,6 @@ export class NetworkLogsHelper {
 
       NetworkLogsHelper.jsonifyBody(item, 'request');
       NetworkLogsHelper.jsonifyBody(item, 'response');
-
 
       item['name'] = null;
       if (item['path'] != null) {
