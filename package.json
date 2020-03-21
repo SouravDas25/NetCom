@@ -103,6 +103,7 @@
     "ngx-bootstrap": "5.5.0",
     "ngx-text-diff": "0.5.4",
     "ngx-toastr": "12.0.0",
+    "sqlite3": "4.1.1",
     "ts-md5": "1.2.7"
   }
 }

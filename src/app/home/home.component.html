@@ -1,4 +1,4 @@
-<div class="container-fluid" style="background-color: ghostwhite">
+<div class="container-fluid h-100 bg-img" style="background-color: ghostwhite">
   <!--  <h1 class="title">-->
   <!--    {{ 'PAGES.HOME.TITLE' | translate }}-->
   <!--  </h1>-->
@@ -59,8 +59,8 @@
 
     </div>
   </div>
-  <div class="row">
-    <ul class="list-group list-group-flush col-3">
+  <div class="row h100">
+    <ul class="list-group list-group-flush col-3 pr-0">
       <li class="">
         <div class="input-group ">
           <div class="input-group-prepend">
@@ -95,8 +95,6 @@
     </ul>
     <div class="col-9 {{ selectedItem ? 'card' : '' }} ">
       <br>
-
-
       <div *ngIf="selectedItem">
         <kbd class="my-2 mr-2">{{ selectedItem.method }}</kbd>
         <code><b>{{selectedItem.scheme}}://{{ selectedItem.host }}</b> {{ selectedItem.path }}</code>
