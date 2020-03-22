@@ -75,20 +75,22 @@
       </li>
       <li class="list-group-item list-group-item-action border-right d-flex justify-content-between align-items-center"
           *ngFor="let item of items" (click)="onClick(item)">
-        <div class="col-8">
+        <div class="">
           <b>{{item.name}}</b>
         </div>
 
-        <div class="col-4" style="font-size: 50%">
-          <span *ngIf="item.isRequestDiff" class="badge badge-primary">
-          <fa-icon [icon]="faArrowUp"></fa-icon>
-        </span>
-          <span *ngIf="item.isResponseDiff" class="badge badge-danger">
-          <fa-icon [icon]="faArrowDown"></fa-icon>
-        </span>
-          <span *ngIf="!item.isRequestDiff && !item.isResponseDiff" class="badge badge-success">
-          <fa-icon [icon]="faCheck"></fa-icon>
-        </span>
+        <div class="align-content-end" style="font-size: 50%">
+          <span *ngIf="item.isRequestDiff" class="badge text-danger">
+            <fa-icon [icon]="faArrowUp"></fa-icon>
+          </span>
+          <span *ngIf="item.isResponseDiff" class="badge text-danger">
+            <fa-icon [icon]="faArrowDown"></fa-icon>
+          </span>
+          <span *ngIf="!item.isRequestDiff && !item.isResponseDiff" class="badge text-success ">
+            <fa-icon [icon]="faCheck"></fa-icon>
+          </span>
+
+          <fa-icon [icon]="faTrash" class="px-2"></fa-icon>
         </div>
 
       </li>
