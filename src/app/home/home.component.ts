@@ -45,6 +45,8 @@ export class HomeComponent implements OnInit {
   is1stCompleted: Boolean = false;
   is2stCompleted: Boolean = false;
 
+  session2type: string = "Select a session type";
+
   isWebAutomationRunning: Boolean = false;
 
   constructor(private toastr: ToastrService, private modalService: NgbModal) {
@@ -139,6 +141,11 @@ export class HomeComponent implements OnInit {
   openSaveModal() {
     const modalRef = this.modalService.open(SaveSessionModal);
     modalRef.componentInstance.modal = modalRef;
+    modalRef.componentInstance.sessionData = this.items;
     modalRef.componentInstance.name = 'World';
+  }
+
+  setSessionType(type: string) {
+    this.session2type = type;
   }
 }

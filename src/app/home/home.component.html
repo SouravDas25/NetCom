@@ -15,17 +15,6 @@
         </div>
 
         <div aria-label="clear-group" class="btn-group mr-2" role="group">
-          <button class="btn {{ is1stCompleted ? 'btn-primary' : 'btn-light' }} border"
-                  type="button" (click)="runWebAutomation()">
-            <span *ngIf="isWebAutomationRunning" class="spinner-border spinner-border-sm" role="status"
-                  aria-hidden="true"></span>
-            web
-          </button>
-          <button class="btn {{ is2stCompleted ? 'btn-primary' : 'btn-light' }} border" type="button">
-            mobile
-          </button>
-        </div>
-        <div aria-label="clear-group" class="btn-group mr-2" role="group">
           <button class="btn btn-light border" placement="bottom" tooltip="clear" type="button"
                   (click)="clearSession()">
             <fa-icon [icon]="faEraser"></fa-icon>
@@ -55,6 +44,35 @@
             </button>
           </div>
         </div>
+
+        <div aria-label="clear-group" class="btn-group ml-2" role="group">
+          <button (click)="runWebAutomation()"
+                  class="btn {{ is1stCompleted ? 'btn-primary' : 'btn-light' }} border" type="button">
+            <span *ngIf="isWebAutomationRunning" aria-hidden="true" class="spinner-border spinner-border-sm"
+                  role="status"></span>
+            web
+          </button>
+          <button class="btn {{ is2stCompleted ? 'btn-primary' : 'btn-light' }} border" type="button">
+            mobile
+          </button>
+
+          <div class="btn-group mr-3">
+            <button class="btn btn-light border" type="button">
+              {{ session2type}}
+              <span *ngIf="isWebAutomationRunning" aria-hidden="true" class="spinner-border spinner-border-sm"
+                    role="status"></span>
+            </button>
+            <div aria-label="Button group with nested dropdown" class="btn-group" ngbDropdown role="group">
+              <button class="btn btn-light border dropdown-toggle-split" ngbDropdownToggle></button>
+              <div class="dropdown-menu" ngbDropdownMenu>
+                <button (click)="setSessionType('record')" ngbDropdownItem>Record Session</button>
+                <button (click)="setSessionType('file')" ngbDropdownItem>File Session</button>
+                <button (click)="setSessionType('selenium')" ngbDropdownItem>Selenium Session</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>

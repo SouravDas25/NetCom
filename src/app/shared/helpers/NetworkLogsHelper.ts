@@ -1,4 +1,5 @@
 import {Md5} from 'ts-md5/dist/md5';
+import {FileSystemHelper} from "./FileSystemHelper";
 
 var Multimap = require('multimap');
 
@@ -32,39 +33,14 @@ export class NetworkLogsHelper {
     return o;
   }
 
-
-  public static async loadJsonFile(filename: string): Promise<Array<Object>> {
-    let data;
-    try {
-      data = await readFile(filename);
-      data = JSON.parse(data);
-      // console.log(data);
-      return data;
-    } catch (err) {
-      console.log(err);
-      return [];
-    }
-  }
-
   public static async loadNetworkLogs(fallback: Boolean = false): Promise<Array<Object>> {
     let filename = fallback ? 'network.json' : 'session1.json';
-    return await this.loadJsonFile(`./networkLogs/${filename}`);
+    return await FileSystemHelper.loadJsonFile(`./networkLogs/${filename}`);
   }
 
   public static async loadControlLogs(fallback: Boolean = false): Promise<Array<Object>> {
     let filename = fallback ? 'control.json' : 'session2.json';
-    return await this.loadJsonFile(`./networkLogs/${filename}`);
-  }
-
-  public static async saveNetworkLogs(data): Promise<Boolean> {
-    data = JSON.stringify(data);
-    try {
-      await writeFile('./networkLogs/network.json', data);
-      return true;
-    } catch (err) {
-      console.log(err);
-      return false;
-    }
+    return await FileSystemHelper.loadJsonFile(`./networkLogs/${filename}`);
   }
 
   public static hashTraffic(item): string {
