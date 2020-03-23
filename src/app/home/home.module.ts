@@ -19,9 +19,10 @@ import {TooltipModule} from 'ngx-bootstrap/tooltip';
 import {ToastrModule} from 'ngx-toastr';
 import {SaveSessionModal} from "../shared/components/save-session-modal/save-session-modal.component";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {OpenSessionModalComponent} from "../shared/components/open-session-modal/open-session-modal.component";
 
 @NgModule({
-  declarations: [HomeComponent, MainBodyComponent, SaveSessionModal],
+  declarations: [HomeComponent, MainBodyComponent, SaveSessionModal, OpenSessionModalComponent],
   exports: [
     HomeComponent
   ],

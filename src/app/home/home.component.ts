@@ -138,11 +138,16 @@ export class HomeComponent implements OnInit {
     this.items.splice(index, 1);
   }
 
-  openSaveModal() {
+  async openSaveModal() {
     const modalRef = this.modalService.open(SaveSessionModal);
     modalRef.componentInstance.modal = modalRef;
     modalRef.componentInstance.sessionData = this.items;
     modalRef.componentInstance.name = 'World';
+    try {
+      let result = await modalRef.result;
+      console.log(result);
+    } catch (e) {
+    }
   }
 
   setSessionType(type: string) {
