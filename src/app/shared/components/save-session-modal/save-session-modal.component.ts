@@ -3,6 +3,7 @@ import {NgbActiveModal, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {FileSystemHelper} from "../../helpers/FileSystemHelper";
 import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import {ToastrService} from "ngx-toastr";
+import {NetworkLogsHelper} from "../../helpers/NetworkLogsHelper";
 
 @Component({
   selector: 'save-modal-session',
@@ -37,7 +38,8 @@ export class SaveSessionModal implements OnInit {
   }
 
   async saveSession() {
-    await FileSystemHelper.saveSession(this.filename, this.sessionData);
+    let rcd = NetworkLogsHelper.reconstructOriginalLogs(this.sessionData);
+    await FileSystemHelper.saveSession(this.filename, rcd);
     this.toastr.info("Session Data Saved.");
     this.activeModal.close("Save Click");
     // console.log("Saved File");

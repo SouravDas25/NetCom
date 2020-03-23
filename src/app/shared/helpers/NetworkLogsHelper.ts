@@ -160,4 +160,12 @@ export class NetworkLogsHelper {
     return traffic2Headers;
   }
 
+  public static reconstructOriginalLogs(compareLogs) {
+    let oriLog = [];
+    compareLogs.forEach((item: object) => {
+      oriLog.push(item['traffic1'])
+    });
+    return oriLog;
+  }
+
 }
