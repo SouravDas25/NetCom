@@ -119,7 +119,7 @@ export class NetworkLogsHelper {
         mergeCollection.set(hashStr, item);
       }
     });
-    // console.log(networkTraffic);
+    console.log(networkTraffic);
     return networkTraffic;
   }
 

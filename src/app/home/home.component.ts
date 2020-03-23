@@ -5,13 +5,17 @@ import {
   faArrowRight,
   faArrowUp,
   faCheck,
+  faEraser,
   faFilter,
   faMicrophone,
+  faSave,
   faStopCircle,
   faTrash
 } from '@fortawesome/free-solid-svg-icons';
 import {ShellExecutorHelper} from "../shared/helpers/ShellExecutorHelper";
 import {ToastrService} from 'ngx-toastr';
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {SaveSessionModal} from "../shared/components/save-session-modal/save-session-modal.component";
 
 @Component({
   selector: 'app-home',
@@ -28,6 +32,8 @@ export class HomeComponent implements OnInit {
   faArrowUp = faArrowUp;
   faArrowDown = faArrowDown;
   faCheck = faCheck;
+  faEraser = faEraser;
+  faSave = faSave;
 
   networkLog = [];
   items = [];
@@ -41,7 +47,7 @@ export class HomeComponent implements OnInit {
 
   isWebAutomationRunning: Boolean = false;
 
-  constructor(private toastr: ToastrService) {
+  constructor(private toastr: ToastrService, private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
@@ -118,12 +124,21 @@ export class HomeComponent implements OnInit {
       this.isWebAutomationRunning = true;
       await ShellExecutorHelper.runWebAutomation();
       this.is1stCompleted = true;
-    }
-    catch (e) {
+    } catch (e) {
       this.toastr.error("Error Occurred while running Web Automation.");
-    }
-    finally {
+    } finally {
       this.isWebAutomationRunning = false;
     }
+  }
+
+
+  async deleteRecord(index) {
+    this.items.splice(index, 1);
+  }
+
+  openSaveModal() {
+    const modalRef = this.modalService.open(SaveSessionModal);
+    modalRef.componentInstance.modal = modalRef;
+    modalRef.componentInstance.name = 'World';
   }
 }

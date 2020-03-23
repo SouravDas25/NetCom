@@ -17,9 +17,11 @@ import {ButtonsModule} from 'ngx-bootstrap/buttons';
 import {TooltipModule} from 'ngx-bootstrap/tooltip';
 
 import {ToastrModule} from 'ngx-toastr';
+import {SaveSessionModal} from "../shared/components/save-session-modal/save-session-modal.component";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [HomeComponent, MainBodyComponent],
+  declarations: [HomeComponent, MainBodyComponent, SaveSessionModal],
   exports: [
     HomeComponent
   ],
@@ -27,6 +29,7 @@ import {ToastrModule} from 'ngx-toastr';
     AccordionModule, BrowserAnimationsModule, CollapseModule, NgxTextDiffModule, TabsModule.forRoot(), ButtonsModule,
     TooltipModule.forRoot(),
     ToastrModule.forRoot(),
+    NgbModule,
   ],
   entryComponents: [NgxTextDiffComponent]
 })

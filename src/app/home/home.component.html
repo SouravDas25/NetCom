@@ -28,7 +28,7 @@
         <div aria-label="clear-group" class="btn-group mr-2" role="group">
           <button class="btn btn-light border" placement="bottom" tooltip="clear" type="button"
                   (click)="clearSession()">
-            <fa-icon [icon]="faTrash"></fa-icon>
+            <fa-icon [icon]="faEraser"></fa-icon>
           </button>
         </div>
         <div aria-label="First group" class="btn-group mr-2 " role="group">
@@ -64,6 +64,9 @@
       <li class="">
         <div class="input-group ">
           <div class="input-group-prepend">
+            <button (click)="openSaveModal()" class="btn btn-primary rounded-0" id="btnSaveSession">
+              <fa-icon [icon]="faSave"></fa-icon>
+            </button>
             <div class="input-group-text" id="btnGroupAddonw">
               <fa-icon [icon]="faFilter"></fa-icon>
             </div>
@@ -74,8 +77,8 @@
         </div>
       </li>
       <li class="list-group-item list-group-item-action border-right d-flex justify-content-between align-items-center"
-          *ngFor="let item of items" (click)="onClick(item)">
-        <div class="">
+          (click)="onClick(item)" *ngFor="let item of items ; let i = index" [attr.data-index]="i">
+        <div class="align-content-start">
           <b>{{item.name}}</b>
         </div>
 
@@ -90,7 +93,8 @@
             <fa-icon [icon]="faCheck"></fa-icon>
           </span>
 
-          <fa-icon [icon]="faTrash" class="px-2"></fa-icon>
+          <fa-icon (click)="deleteRecord(i)" [icon]="faTrash" class="px-2"></fa-icon>
+
         </div>
 
       </li>
