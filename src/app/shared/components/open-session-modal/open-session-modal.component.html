@@ -1,26 +1,17 @@
 <div class="modal-header bg-primary">
-  <h4 class="modal-title text-white" id="modal-basic-title">Save Session</h4>
+  <h4 class="modal-title text-white" id="modal-basic-title">Open Session</h4>
   <a (click)="activeModal.dismiss('Cross click')" aria-label="Close" class="close" type="button">
-    <fa-icon [icon]="faCross"></fa-icon>
+    <fa-icon [icon]="faTimes"></fa-icon>
   </a>
 </div>
 <div class="modal-body">
-  <form>
-    <div class="form-group">
-      <label for="sessionfilename">File Name</label>
-      <div class="input-group">
-        <input [(ngModel)]="filename" class="form-control" id="sessionfilename"
-               name="sessionfilename" placeholder="collection name">
-      </div>
-    </div>
-  </form>
-  <hr>
   <ul class="list-group">
-    <li (click)="selectFile(col)" *ngFor="let col of collections" class="list-group-item list-group-item-action">
+    <li (click)="selectFile(col)" *ngFor="let col of collections"
+        class="list-group-item list-group-item-action {{ col == filename ? 'active' : ''}}">
       <b>{{col}}</b>
     </li>
   </ul>
 </div>
 <div class="modal-footer">
-  <button (click)="saveSession()" class="btn btn-outline-dark" type="button">Save</button>
+  <button (click)="openSession()" class="btn btn-primary" type="button">Open Session</button>
 </div>

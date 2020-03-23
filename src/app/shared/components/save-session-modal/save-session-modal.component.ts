@@ -14,7 +14,6 @@ export class SaveSessionModal implements OnInit {
 
   faCross = faTimes;
 
-  public modal: Object;
   public sessionData: Array<object>;
   public filename: String;
 
@@ -41,7 +40,7 @@ export class SaveSessionModal implements OnInit {
     let rcd = NetworkLogsHelper.reconstructOriginalLogs(this.sessionData);
     await FileSystemHelper.saveSession(this.filename, rcd);
     this.toastr.info("Session Data Saved.");
-    this.activeModal.close("Save Click");
+    this.activeModal.close(this.filename);
     // console.log("Saved File");
   }
 }

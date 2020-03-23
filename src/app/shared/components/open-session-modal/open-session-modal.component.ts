@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
+import {FileSystemHelper} from "../../helpers/FileSystemHelper";
+import {faTimes} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-open-session-modal',
@@ -7,10 +10,29 @@ import {Component, OnInit} from '@angular/core';
 })
 export class OpenSessionModalComponent implements OnInit {
 
-  constructor() {
+  faTimes = faTimes;
+
+  public filename: String;
+  public collections;
+
+  constructor(public activeModal: NgbActiveModal) {
   }
 
   ngOnInit(): void {
+    this.load();
+  }
+
+  async load() {
+    this.collections = await FileSystemHelper.getCollections();
+    console.log(this.collections);
+  }
+
+  selectFile(col: string) {
+    this.filename = col;
+  }
+
+  openSession() {
+    this.activeModal.close(this.filename);
   }
 
 }

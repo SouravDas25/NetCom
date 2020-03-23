@@ -8,69 +8,87 @@
       <div aria-label="Toolbar with button groups" class="btn-toolbar mb-3" role="toolbar">
 
         <div class="btn-group mr-2" role="group" aria-label="Start">
-          <button type="button" class="btn {{isCharlesRunning ? 'btn-danger' : 'btn-primary'}}"
-                  (click)="runOrStopCharlesOnClick()">
-            {{ isCharlesRunning ? 'Stop Charles' : 'Start Charles' }}
+          <button (click)="netCmpService.runOrStopCharles()"
+                  class="btn {{netCmpService.isCharlesRunning ? 'btn-danger' : 'btn-primary'}}"
+                  type="button">
+            {{ netCmpService.isCharlesRunning ? 'Stop Charles' : 'Start Charles' }}
           </button>
         </div>
 
-        <div aria-label="clear-group" class="btn-group mr-2" role="group">
+        <div *ngIf="netCmpService.isSessionTypeManual" aria-label="clear-group" class="btn-group mr-2" role="group">
           <button class="btn btn-light border" placement="bottom" tooltip="clear" type="button"
-                  (click)="clearSession()">
+                  (click)="netCmpService.clearSession()">
             <fa-icon [icon]="faEraser"></fa-icon>
           </button>
         </div>
-        <div aria-label="First group" class="btn-group mr-2 " role="group">
-          <button class="btn btn-light border text-info {{ isRecoding ? 'active' : '' }}" placement="bottom"
+        <div *ngIf="netCmpService.isSessionTypeManual" aria-label="First group" class="btn-group mr-2 " role="group">
+          <button (click)="netCmpService.startRecoding()"
+                  class="btn btn-light border text-info {{ netCmpService.isRecoding ? 'active' : '' }}"
                   tooltip="record" type="button"
-                  (click)="startRecoding()">
+                  placement="bottom">
             <fa-icon [icon]="faMicrophone"></fa-icon>
           </button>
           <button class="btn btn-light border text-danger" placement="bottom" tooltip="stop" type="button"
-                  (click)="completeRecording()">
+                  (click)="netCmpService.completeRecording()">
             <fa-icon [icon]="faStopCircle"></fa-icon>
           </button>
         </div>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text" id="btnGroupAddon">@</div>
-          </div>
-          <input aria-describedby="btnGroupAddon" aria-label="Input group example" class="form-control"
-                 placeholder="Input group example"
-                 type="text">
-          <div class="input-group-append">
-            <button type="button" class="btn btn-outline-primary">
-              <fa-icon [icon]="faArrowRight"></fa-icon>
-            </button>
-          </div>
-        </div>
+        <!--        <div class="input-group">-->
+        <!--          <div class="input-group-prepend">-->
+        <!--            <div class="input-group-text" id="btnGroupAddon">@</div>-->
+        <!--          </div>-->
+        <!--          <input aria-describedby="btnGroupAddon" aria-label="Input group example" class="form-control"-->
+        <!--                 placeholder="Input group example"-->
+        <!--                 type="text">-->
+        <!--          <div class="input-group-append">-->
+        <!--            <button type="button" class="btn btn-outline-primary">-->
+        <!--              <fa-icon [icon]="faArrowRight"></fa-icon>-->
+        <!--            </button>-->
+        <!--          </div>-->
+        <!--        </div>-->
 
         <div aria-label="clear-group" class="btn-group ml-2" role="group">
-          <button (click)="runWebAutomation()"
-                  class="btn {{ is1stCompleted ? 'btn-primary' : 'btn-light' }} border" type="button">
-            <span *ngIf="isWebAutomationRunning" aria-hidden="true" class="spinner-border spinner-border-sm"
-                  role="status"></span>
-            web
-          </button>
-          <button class="btn {{ is2stCompleted ? 'btn-primary' : 'btn-light' }} border" type="button">
-            mobile
-          </button>
 
-          <div class="btn-group mr-3">
+          <div class="btn-group">
+            <div aria-label="Button group with nested dropdown" class="btn-group" ngbDropdown role="group">
+              <button class="btn btn-light border dropdown-toggle-split" ngbDropdownToggle></button>
+              <div class="dropdown-menu" ngbDropdownMenu>
+                <button (click)="netCmpService.setManualSessionType()" ngbDropdownItem>Record Session</button>
+                <button (click)="openSessionModal()" ngbDropdownItem>File Session</button>
+                <button (click)="netCmpService.setFromWebAutomation()" ngbDropdownItem>Selenium Session</button>
+              </div>
+            </div>
             <button class="btn btn-light border" type="button">
-              {{ session2type}}
-              <span *ngIf="isWebAutomationRunning" aria-hidden="true" class="spinner-border spinner-border-sm"
+              {{ netCmpService.originalSessionType }}
+              <span *ngIf="netCmpService.isWebAutomationRunning" aria-hidden="true"
+                    class="spinner-border spinner-border-sm"
+                    role="status"></span>
+            </button>
+          </div>
+
+          <div *ngIf="netCmpService.isOriginalLogSet" class="btn-group mr-3">
+            <button class="btn btn-light border" type="button">
+              {{ netCmpService.controlSessionType }}
+              <span *ngIf="netCmpService.isWebAutomationRunning" aria-hidden="true"
+                    class="spinner-border spinner-border-sm"
                     role="status"></span>
             </button>
             <div aria-label="Button group with nested dropdown" class="btn-group" ngbDropdown role="group">
               <button class="btn btn-light border dropdown-toggle-split" ngbDropdownToggle></button>
               <div class="dropdown-menu" ngbDropdownMenu>
-                <button (click)="setSessionType('record')" ngbDropdownItem>Record Session</button>
-                <button (click)="setSessionType('file')" ngbDropdownItem>File Session</button>
-                <button (click)="setSessionType('selenium')" ngbDropdownItem>Selenium Session</button>
+                <button (click)="netCmpService.setManualSessionType()" ngbDropdownItem>Record Session</button>
+                <button (click)="openSessionModal()" ngbDropdownItem>File Session</button>
+                <button ngbDropdownItem>Selenium Session</button>
               </div>
             </div>
           </div>
+        </div>
+
+        <div aria-label="Start" class="btn-group ml-2" role="group">
+          <button (click)="loadData()" class="btn btn-info"
+                  type="button">
+            Compare
+          </button>
         </div>
 
       </div>
@@ -79,7 +97,7 @@
   </div>
   <div class="row h100">
     <ul class="list-group list-group-flush col-3 pr-0">
-      <li class="">
+      <li *ngIf="netCmpService.isAllSet" class="">
         <div class="input-group ">
           <div class="input-group-prepend">
             <button (click)="openSaveModal()" class="btn btn-primary rounded-0" id="btnSaveSession">

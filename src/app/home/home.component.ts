@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {NetworkLogsHelper} from "../shared/helpers/NetworkLogsHelper";
 import {
   faArrowDown,
   faArrowRight,
@@ -12,10 +11,11 @@ import {
   faStopCircle,
   faTrash
 } from '@fortawesome/free-solid-svg-icons';
-import {ShellExecutorHelper} from "../shared/helpers/ShellExecutorHelper";
 import {ToastrService} from 'ngx-toastr';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {SaveSessionModal} from "../shared/components/save-session-modal/save-session-modal.component";
+import {OpenSessionModalComponent} from "../shared/components/open-session-modal/open-session-modal.component";
+import {NetCmpService} from "../shared/helpers/NetCmpService";
 
 @Component({
   selector: 'app-home',
@@ -39,98 +39,25 @@ export class HomeComponent implements OnInit {
   items = [];
   selectedItem;
 
-  isCharlesRunning: Boolean = false;
-  isRecoding: Boolean = false;
+  netCmpService: NetCmpService = new NetCmpService();
 
-  is1stCompleted: Boolean = false;
-  is2stCompleted: Boolean = false;
-
-  session2type: string = "Select a session type";
-
-  isWebAutomationRunning: Boolean = false;
 
   constructor(private toastr: ToastrService, private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
-    this.loadData(false);
+    // this.loadData();
   }
 
-  async loadData(fallback: boolean = false) {
-    this.networkLog = await NetworkLogsHelper.getComparedNetworkTraffic(fallback);
+  async loadData() {
+    this.networkLog = await this.netCmpService.getCmpLogs();
+
     console.log(this.networkLog);
     this.items = this.networkLog;
   }
 
   onClick(item) {
     this.selectedItem = item;
-  }
-
-  runOrStopCharlesOnClick() {
-    if (this.isCharlesRunning) {
-      ShellExecutorHelper.killCharles();
-    } else {
-      ShellExecutorHelper.runCharles();
-    }
-    this.isCharlesRunning = !this.isCharlesRunning;
-  }
-
-  startRecoding() {
-    if (!this.isCharlesRunning) {
-      this.toastr.info("Charles is not running, please start charles first.");
-      return;
-    }
-    if (!this.is1stCompleted) {
-      this.toastr.info("Please record the web first.");
-      return;
-    }
-    ShellExecutorHelper.startRecording();
-    this.isRecoding = true;
-  }
-
-  clearSession() {
-    if (!this.isCharlesRunning) {
-      this.toastr.info("Charles is not running, please start charles first.");
-      return;
-    }
-    ShellExecutorHelper.clearSession();
-  }
-
-  completeRecording() {
-    if (!this.isCharlesRunning) {
-      this.toastr.info("Charles is not running, please start charles first.");
-      return;
-    }
-    if (!this.isRecoding) {
-      this.toastr.error("Recording should be on to stop it.");
-      return;
-    }
-    ShellExecutorHelper.completeRecording(this.is1stCompleted ? "session2" : "session1");
-    if (!this.is1stCompleted) this.is1stCompleted = true;
-    else this.is2stCompleted = true;
-
-    this.isRecoding = false;
-
-    if (this.is1stCompleted && this.is2stCompleted) {
-      this.loadData(true);
-    }
-  }
-
-
-  async runWebAutomation() {
-    if (!this.isCharlesRunning) {
-      this.toastr.info("Charles is not running, please start charles first.");
-      return;
-    }
-    try {
-      this.isWebAutomationRunning = true;
-      await ShellExecutorHelper.runWebAutomation();
-      this.is1stCompleted = true;
-    } catch (e) {
-      this.toastr.error("Error Occurred while running Web Automation.");
-    } finally {
-      this.isWebAutomationRunning = false;
-    }
   }
 
 
@@ -140,17 +67,26 @@ export class HomeComponent implements OnInit {
 
   async openSaveModal() {
     const modalRef = this.modalService.open(SaveSessionModal);
-    modalRef.componentInstance.modal = modalRef;
     modalRef.componentInstance.sessionData = this.items;
     modalRef.componentInstance.name = 'World';
     try {
       let result = await modalRef.result;
       console.log(result);
+      this.netCmpService.setFromFile(result);
     } catch (e) {
+      console.log(e)
     }
   }
 
-  setSessionType(type: string) {
-    this.session2type = type;
+  async openSessionModal() {
+    const modalRef = this.modalService.open(OpenSessionModalComponent);
+    modalRef.componentInstance.name = 'World';
+    try {
+      let result = await modalRef.result;
+      this.netCmpService.setFromFile(result);
+      console.log(result);
+    } catch (e) {
+      console.log(e)
+    }
   }
 }

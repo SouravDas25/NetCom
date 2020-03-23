@@ -33,14 +33,8 @@ export class NetworkLogsHelper {
     return o;
   }
 
-  public static async loadNetworkLogs(fallback: Boolean = false): Promise<Array<Object>> {
-    let filename = fallback ? 'network.json' : 'session1.json';
-    return await FileSystemHelper.loadJsonFile(`./networkLogs/${filename}`);
-  }
-
-  public static async loadControlLogs(fallback: Boolean = false): Promise<Array<Object>> {
-    let filename = fallback ? 'control.json' : 'session2.json';
-    return await FileSystemHelper.loadJsonFile(`./networkLogs/${filename}`);
+  public static async loadNetworkLogs(filepath: string): Promise<Array<Object>> {
+    return await FileSystemHelper.loadJsonFile(`./networkLogs/${filepath}`);
   }
 
   public static hashTraffic(item): string {
@@ -52,9 +46,9 @@ export class NetworkLogsHelper {
     return <string>md5.end();
   }
 
-  public static async getComparedNetworkTraffic(fallback: Boolean = false) {
-    let networkLogs = await NetworkLogsHelper.loadNetworkLogs(fallback);
-    let controlLogs = await NetworkLogsHelper.loadControlLogs(fallback);
+  public static async getComparedNetworkTraffic(originalLog: string, controlLog: string) {
+    let networkLogs = await NetworkLogsHelper.loadNetworkLogs(originalLog);
+    let controlLogs = await NetworkLogsHelper.loadNetworkLogs(controlLog);
     networkLogs = await this.filterNetworkTraffic(networkLogs);
     controlLogs = await this.filterNetworkTraffic(controlLogs);
 
