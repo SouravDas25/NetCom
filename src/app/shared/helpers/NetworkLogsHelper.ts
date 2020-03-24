@@ -47,6 +47,7 @@ export class NetworkLogsHelper {
   }
 
   public static async getComparedNetworkTraffic(originalLog: string, controlLog: string) {
+    // console.log(originalLog);
     let networkLogs = await NetworkLogsHelper.loadNetworkLogs(originalLog);
     let controlLogs = await NetworkLogsHelper.loadNetworkLogs(controlLog);
     networkLogs = await this.filterNetworkTraffic(networkLogs);
@@ -61,6 +62,8 @@ export class NetworkLogsHelper {
       let hashStr = NetworkLogsHelper.hashTraffic(item);
       mergeCollection.set(hashStr, item);
     });
+
+    // console.log(networkLogs);
 
     controlLogs.forEach((item) => {
       if (item == null) return;
@@ -85,8 +88,6 @@ export class NetworkLogsHelper {
           "traffic1": item2,
           "traffic2": item,
         });
-      } else {
-        mergeCollection.set(hashStr, item);
       }
     });
     console.log(networkTraffic);

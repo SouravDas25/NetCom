@@ -61,13 +61,19 @@ export class NetCmpService {
     if (!this.isRecoding) {
       this.startRecoding();
     }
-    this.clearSession();
-    await this.runWebAutomation();
-    this.completeRecording();
     if (!this.isOriginalLogSet) {
       this.originalSessionType = "selenium";
     } else {
       this.controlSessionType = "selenium";
+    }
+    try {
+      this.clearSession();
+      await this.runWebAutomation();
+      this.completeRecording();
+    } catch (e) {
+      console.log(e);
+    } finally {
+
     }
   }
 

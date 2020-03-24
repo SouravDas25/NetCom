@@ -1,0 +1,1915 @@
+[
+  {
+    "status": "COMPLETE",
+    "method": "POST",
+    "protocolVersion": "HTTP/1.1",
+    "scheme": "https",
+    "host": "master-fpa73.eu2cnry.projectorca.cloud",
+    "actualPort": 443,
+    "path": "/nlq-service/api/engine/interpret",
+    "query": "tenant=6",
+    "tunnel": false,
+    "keptAlive": true,
+    "webSocket": false,
+    "remoteAddress": "master-fpa73.eu2cnry.projectorca.cloud/157.133.69.217",
+    "clientAddress": "/127.0.0.1",
+    "clientPort": 54194,
+    "times": {
+      "start": "2020-03-02T12:05:13.830+05:30",
+      "requestBegin": "2020-03-02T12:05:13.831+05:30",
+      "requestComplete": "2020-03-02T12:05:13.831+05:30",
+      "responseBegin": "2020-03-02T12:05:14.243+05:30",
+      "end": "2020-03-02T12:05:14.244+05:30"
+    },
+    "durations": {
+      "total": 413,
+      "dns": null,
+      "connect": null,
+      "ssl": null,
+      "request": 0,
+      "response": 1,
+      "latency": 412
+    },
+    "speeds": {
+      "overall": 8164,
+      "request": 0,
+      "response": 1340000
+    },
+    "totalSize": 3372,
+    "ssl": {
+      "protocol": "TLSv1.2",
+      "cipherSuite": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
+    },
+    "request": {
+      "sizes": {
+        "headers": 1012,
+        "body": 1020
+      },
+      "mimeType": "application/json",
+      "charset": "UTF-8",
+      "contentEncoding": null,
+      "header": {
+        "firstLine": "POST /nlq-service/api/engine/interpret?tenant=6 HTTP/1.1",
+        "headers": [
+          {
+            "name": "Host",
+            "value": "master-fpa73.eu2cnry.projectorca.cloud:443"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json;charset=UTF-8"
+          },
+          {
+            "name": "Accept",
+            "value": "*/*"
+          },
+          {
+            "name": "Cookie",
+            "value": "BIGipServernlqservicemasterueemf791xg.int.sap.eu2.hana.ondemand.com=!PHf/jyDd00pLY6jsonnpQvDoyMkQcBMrdi8yxzZY/GNn5xgHZu9tB1fy2F9LK+rqJLqUWANKif2ZefTHcI+lprhD6abYvgkpxeybsmMm00I6jxf/RWqXf2bBI5VMKCy/0Zf81E72g/8pEfKrsxyI54EkbFPp29M=; JNLQAGENTSESSIONID=D8112C16604047BC6BEA6616AB8E971D364B9D5E57FCB24883F01E36B71A408E; BIGipServerapprouterzluzj19vrp.canaryeu2.customdomain=!gtXbzxA1unr5o47sonnpQvDoyMkQcLCssiK4xIkm0X0V/tGySBlAYeFXVUccx5yZDYCsLWitKq8Oj2w=; JSESSIONID=97AA7D8E37A679B8ED91CCC81F98508E310F8AAE0B96453FC5CFBE09D42C43C7; JTENANTSESSIONID_tb86834ab=yt8TDxW%2FR8YeHs9WgrQJ4CYU2KAXkkIaD1tlhFV3Wok%3D"
+          },
+          {
+            "name": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "name": "X-CSRF-Token",
+            "value": "72D87F44929A58458A942A85750F9343"
+          },
+          {
+            "name": "Accept-Language",
+            "value": "en-us"
+          },
+          {
+            "name": "Content-Length",
+            "value": "1020"
+          },
+          {
+            "name": "Accept-Encoding",
+            "value": "gzip, deflate, br"
+          },
+          {
+            "name": "User-Agent",
+            "value": "CloudForAnalytics/f1d0e0103 CFNetwork/1121.2.1 Darwin/19.3.0"
+          }
+        ]
+      },
+      "body": {
+        "Context": {
+          "DatasetSearchSpace": [
+            "sap.epm:ProfitAndLoss"
+          ]
+        },
+        "EntityMatches": {
+          "Matches": {
+            "ref0": {
+              "AvailableEntityRefs": [
+                "2679d14b808160146dd17a942c2550d9",
+                "9336ee0647ba16bf3d314468de10b7de"
+              ],
+              "SelectedEntityRef": "9336ee0647ba16bf3d314468de10b7de",
+              "Token": "Income Statement"
+            },
+            "ref1": {
+              "AvailableEntityRefs": [
+                "2679d14b808160146dd17a942c2550d9",
+                "9336ee0647ba16bf3d314468de10b7de"
+              ],
+              "SelectedEntityRef": "2679d14b808160146dd17a942c2550d9",
+              "Token": "Product"
+            }
+          },
+          "ParameterizedText": "@ref0 by @ref1"
+        },
+        "InputText": "Income Statement by Product",
+        "Properties": {
+          "Features": {
+            "NLQ_ENHANCED_TIME_GRANULARITY_SUPPORT": true,
+            "NLQ_FISCAL_YEAR": true,
+            "NLQ_MEASURE_BASED_FILTER": true,
+            "NLQ_USAGE_CAPTURE": false
+          },
+          "Version": "2.0"
+        },
+        "ShowPromptDatasetResults": true
+      }
+    },
+    "response": {
+      "status": 200,
+      "sizes": {
+        "headers": 0,
+        "body": 1340
+      },
+      "mimeType": "application/json",
+      "charset": null,
+      "contentEncoding": "gzip",
+      "header": {
+        "firstLine": "HTTP/1.1 200 ",
+        "headers": [
+          {
+            "name": "X-SAP-BOC-PROCESS-ID",
+            "value": "38691c08c76605f6163ecb470bbb5023e88ddae9"
+          },
+          {
+            "name": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "name": "X-XSS-Protection",
+            "value": "1; mode=block"
+          },
+          {
+            "name": "Cache-Control",
+            "value": "no-cache, no-store, max-age=0, must-revalidate"
+          },
+          {
+            "name": "Pragma",
+            "value": "no-cache"
+          },
+          {
+            "name": "Expires",
+            "value": "0"
+          },
+          {
+            "name": "vary",
+            "value": "accept-encoding"
+          },
+          {
+            "name": "Content-Encoding",
+            "value": "gzip"
+          },
+          {
+            "name": "Date",
+            "value": "Mon, 02 Mar 2020 06:35:13 GMT"
+          },
+          {
+            "name": "Server",
+            "value": "SAP"
+          },
+          {
+            "name": "x-sap-boc-approuter",
+            "value": "true"
+          },
+          {
+            "name": "sap-statistics-sac-approuter",
+            "value": "total=232, ext=110"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "name": "Transfer-Encoding",
+            "value": "chunked"
+          },
+          {
+            "name": "Keep-Alive",
+            "value": "timeout=20"
+          },
+          {
+            "name": "Strict-Transport-Security",
+            "value": "max-age=31536000; includeSubDomains; preload"
+          },
+          {
+            "name": "Connection",
+            "value": "keep-alive"
+          }
+        ]
+      },
+      "body": {
+        "InputText": "Income Statement by Product",
+        "Interpretations": [
+          {
+            "Data": {
+              "Datasets": [
+                "38bd7ed5cd56fac2b60303f859970b42"
+              ],
+              "Dimensions": [
+                {
+                  "TokenIndex": 2
+                }
+              ],
+              "Drills": [
+                {
+                  "Member": {
+                    "EntityRef": "8ff767fa16cffcb815536fe8b0cbd629"
+                  }
+                }
+              ],
+              "Filters": [
+                {
+                  "FilterType": "Dimension",
+                  "IsExclude": false,
+                  "Tuples": [
+                    [
+                      {
+                        "IsExclude": false,
+                        "Member": {
+                          "EntityRef": "6308da8e093c14d10bc561c4cae6fa39"
+                        },
+                        "Type": "DimensionMember"
+                      }
+                    ]
+                  ]
+                }
+              ],
+              "Measures": [
+                {
+                  "TokenIndex": 0
+                }
+              ],
+              "PresentationHint": {}
+            },
+            "FeaturesScore": {
+              "EntityMatchFeatureScorer": 1,
+              "FractionOfUnusedTokensFeatureScorer": 0,
+              "IntentFeatureScorer": 0,
+              "InverseCountOfPhrasesFeatureScorer": 0.6666666666666666,
+              "QueryValidityFeatureScorer": 0
+            },
+            "Phrases": [
+              {
+                "MEASURE": [
+                  {
+                    "TokenIndex": 0
+                  }
+                ]
+              },
+              {
+                "BY_DIMENSION": [
+                  {
+                    "BY_FOR": [
+                      {
+                        "TokenIndex": 1
+                      }
+                    ]
+                  },
+                  {
+                    "DIMENSION": [
+                      {
+                        "TokenIndex": 2
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Score": 1.6070666666666666,
+            "Tokens": [
+              {
+                "InputText": "@ref0",
+                "Matches": [
+                  {
+                    "ConflictCount": 0,
+                    "EntityRef": "9336ee0647ba16bf3d314468de10b7de",
+                    "Score": 1
+                  }
+                ]
+              },
+              {
+                "InputText": "by",
+                "Matches": [
+                  {
+                    "ConflictCount": 0,
+                    "Entity": {
+                      "Key": "by",
+                      "RefId": "REF::by",
+                      "Type": "StopWord"
+                    },
+                    "Score": 1
+                  }
+                ]
+              },
+              {
+                "InputText": "@ref1",
+                "Matches": [
+                  {
+                    "ConflictCount": 0,
+                    "EntityRef": "2679d14b808160146dd17a942c2550d9",
+                    "Score": 1
+                  }
+                ]
+              }
+            ],
+            "Type": "Query"
+          }
+        ],
+        "Metadata": {
+          "Datasets": [
+            {
+              "Caption": "Profit & Loss per Region and Product",
+              "Currencies": [],
+              "Datasource": {
+                "Description": "Profit & Loss per Region and Product",
+                "EPMObjectMetadata": {
+                  "data": {
+                    "description": "Profit & Loss per Region and Product",
+                    "epmQuerySourceName": "/sap.epm/ProfitAndLoss_qs",
+                    "id": "sap.epm:ProfitAndLoss",
+                    "mode": "standalone",
+                    "name": "ProfitAndLoss",
+                    "packageName": "sap.epm",
+                    "schemaName": "TENANT_6",
+                    "shortDescription": "ProfitAndLoss",
+                    "type": "Planning"
+                  }
+                },
+                "GeneratedTime": 1580885774032,
+                "ObjectName": "/sap.epm/ProfitAndLoss_qs",
+                "SchemaName": "TENANT_6",
+                "Type": "Planning"
+              },
+              "Dimensions": [
+                {
+                  "Description": "Account",
+                  "FieldDefaults": {
+                    "DisplayKeyAttribute": "sap.epm:Account.ID",
+                    "HierarchyDisplayKeyAttribute": "[sap.epm:Account].name",
+                    "HierarchyKeyAttribute": "[sap.epm:Account].key",
+                    "HierarchyPathAttribute": "[sap.epm:Account].path",
+                    "HierarchyTextAttribute": "[sap.epm:Account].description",
+                    "KeyAttribute": "sap.epm:Account.ID",
+                    "TextAttribute": "sap.epm:Account.Description"
+                  },
+                  "Hierarchy": "parentId",
+                  "Members": [
+                    {
+                      "HierarchyInfo": {
+                        "NodeDepth": 0,
+                        "NodeLevel": 1,
+                        "NodeType": "Root"
+                      },
+                      "RefId": "9336ee0647ba16bf3d314468de10b7de",
+                      "[sap.epm:Account].description": "Income Statement",
+                      "[sap.epm:Account].key": "[sap.epm:Account].[parentId].&[INCOME_STMT]",
+                      "[sap.epm:Account].name": "INCOME_STMT",
+                      "[sap.epm:Account].path": "{\"Name\":[\"INCOME_STMT\"],\"Description\":[\"Income Statement\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\"]}"
+                    }
+                  ],
+                  "Name": "sap.epm:Account",
+                  "RefId": "6a4ec423da2192548fb257f2df9bfc16",
+                  "SemanticType": "Measure",
+                  "Type": "12"
+                },
+                {
+                  "Description": "Version",
+                  "FieldDefaults": {
+                    "DisplayKeyAttribute": "sap.epm:ProfitAndLoss_Version02.ID",
+                    "HierarchyDisplayKeyAttribute": "[sap.epm:ProfitAndLoss_Version02].name",
+                    "HierarchyKeyAttribute": "[sap.epm:ProfitAndLoss_Version02].key",
+                    "HierarchyPathAttribute": "[sap.epm:ProfitAndLoss_Version02].path",
+                    "HierarchyTextAttribute": "[sap.epm:ProfitAndLoss_Version02].description",
+                    "KeyAttribute": "sap.epm:ProfitAndLoss_Version02.ID",
+                    "TextAttribute": "sap.epm:ProfitAndLoss_Version02.Description"
+                  },
+                  "Members": [
+                    {
+                      "RefId": "6308da8e093c14d10bc561c4cae6fa39",
+                      "sap.epm:ProfitAndLoss_Version02.Description": "Actual",
+                      "sap.epm:ProfitAndLoss_Version02.ID": "public.Actual"
+                    }
+                  ],
+                  "Name": "sap.epm:ProfitAndLoss_Version02",
+                  "RefId": "febfcc8d1cd4ddff7cb0ac2a20c64d8e",
+                  "SemanticType": "Dimension",
+                  "Type": "11"
+                },
+                {
+                  "Description": "Product",
+                  "FieldDefaults": {
+                    "DisplayKeyAttribute": "sap.epm:Product.ID",
+                    "HierarchyDisplayKeyAttribute": "[sap.epm:Product].name",
+                    "HierarchyKeyAttribute": "[sap.epm:Product].key",
+                    "HierarchyPathAttribute": "[sap.epm:Product].path",
+                    "HierarchyTextAttribute": "[sap.epm:Product].description",
+                    "KeyAttribute": "sap.epm:Product.ID",
+                    "TextAttribute": "sap.epm:Product.Description"
+                  },
+                  "Hierarchy": "parentId",
+                  "Members": [
+                    {
+                      "HierarchyInfo": {
+                        "NodeDepth": 0,
+                        "NodeLevel": 1,
+                        "NodeType": "Root"
+                      },
+                      "RefId": "8ff767fa16cffcb815536fe8b0cbd629",
+                      "[sap.epm:Product].description": "All Products",
+                      "[sap.epm:Product].key": "[sap.epm:Product].[parentId].&[ALL_PRODUCTS]",
+                      "[sap.epm:Product].name": "ALL_PRODUCTS",
+                      "[sap.epm:Product].path": "{\"Name\":[\"ALL_PRODUCTS\"],\"Description\":[\"All Products\"],\"UniqueName\":[\"[sap.epm:Product].[parentId].&[ALL_PRODUCTS]\"]}"
+                    }
+                  ],
+                  "Name": "sap.epm:Product",
+                  "RefId": "2679d14b808160146dd17a942c2550d9",
+                  "SemanticType": "Dimension",
+                  "Type": "3"
+                }
+              ],
+              "RefId": "38bd7ed5cd56fac2b60303f859970b42"
+            }
+          ]
+        },
+        "Properties": {
+          "version": "1.0"
+        },
+        "SelectedDatasets": [
+          "38bd7ed5cd56fac2b60303f859970b42"
+        ]
+      }
+    },
+    "name": "interpret"
+  },
+  {
+    "status": "COMPLETE",
+    "method": "POST",
+    "protocolVersion": "HTTP/1.1",
+    "scheme": "https",
+    "host": "master-fpa73.eu2cnry.projectorca.cloud",
+    "actualPort": 443,
+    "path": "/sap/eqs/bc/ina/service/v2/GetResponse",
+    "query": null,
+    "tunnel": false,
+    "keptAlive": false,
+    "webSocket": false,
+    "remoteAddress": "master-fpa73.eu2cnry.projectorca.cloud/157.133.69.217",
+    "clientAddress": "/127.0.0.1",
+    "clientPort": 54220,
+    "times": {
+      "start": "2020-03-02T12:05:11.971+05:30",
+      "requestBegin": "2020-03-02T12:05:12.917+05:30",
+      "requestComplete": "2020-03-02T12:05:12.918+05:30",
+      "responseBegin": "2020-03-02T12:05:13.769+05:30",
+      "end": "2020-03-02T12:05:13.771+05:30"
+    },
+    "durations": {
+      "total": 1780,
+      "dns": 1,
+      "connect": 306,
+      "ssl": 619,
+      "request": 1,
+      "response": 2,
+      "latency": 851
+    },
+    "speeds": {
+      "overall": 18125,
+      "request": 8250000,
+      "response": 12006500
+    },
+    "totalSize": 32263,
+    "ssl": {
+      "protocol": "TLSv1.2",
+      "cipherSuite": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
+    },
+    "request": {
+      "sizes": {
+        "handshake": 1474,
+        "headers": 1309,
+        "body": 5467
+      },
+      "mimeType": "application/json",
+      "charset": "UTF-8",
+      "contentEncoding": null,
+      "header": {
+        "firstLine": "POST /sap/eqs/bc/ina/service/v2/GetResponse HTTP/1.1",
+        "headers": [
+          {
+            "name": "Host",
+            "value": "master-fpa73.eu2cnry.projectorca.cloud"
+          },
+          {
+            "name": "Accept",
+            "value": "application/json"
+          },
+          {
+            "name": "Accept-Language",
+            "value": "en"
+          },
+          {
+            "name": "Accept-Encoding",
+            "value": "gzip, deflate"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json;charset=UTF-8"
+          },
+          {
+            "name": "Origin",
+            "value": "https://master-fpa73.eu2cnry.projectorca.cloud"
+          },
+          {
+            "name": "Content-Length",
+            "value": "5467"
+          },
+          {
+            "name": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "name": "User-Agent",
+            "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
+          },
+          {
+            "name": "Referer",
+            "value": "https://master-fpa73.eu2cnry.projectorca.cloud/sap/fpa/ui/mobile/mobileLoader.html"
+          },
+          {
+            "name": "X-Csrf-Token",
+            "value": "72D87F44929A58458A942A85750F9343"
+          },
+          {
+            "name": "x-sap-cid",
+            "value": "[FF-XV:105/LV:19071501/GC:$$GitCommitId$$/LG:TYPESCRIPT][SId:5b26b0ef-a518-f686-1d83-b491b33ce1f6][CId:e9c38b06-5b83-2bc2-e823-519fb8a5e797]"
+          },
+          {
+            "name": "Cookie",
+            "value": "BIGipServerorcacan025ne4a4ula08.int.sap.eu2.hana.ondemand.com=!TetIFcF546kFV2bsonnpQvDoyMkQcEwipf6Wz1ormP+IhhmPZv4P5KN1xWRkz/+i2t91elPHSat8FiE=; sapxslb=9AF97A91C6D0CE47B0CD78E0D4BA5108; xsSecureIdF70C9578C5669618EB600D43E291F313=60D3390FA424BA49B0DCB4518EB1A65D; BIGipServerapprouterzluzj19vrp.canaryeu2.customdomain=!gtXbzxA1unr5o47sonnpQvDoyMkQcLCssiK4xIkm0X0V/tGySBlAYeFXVUccx5yZDYCsLWitKq8Oj2w=; JSESSIONID=97AA7D8E37A679B8ED91CCC81F98508E310F8AAE0B96453FC5CFBE09D42C43C7; JTENANTSESSIONID_tb86834ab=yt8TDxW%2FR8YeHs9WgrQJ4CYU2KAXkkIaD1tlhFV3Wok%3D"
+          }
+        ]
+      },
+      "body": {
+        "Analytics": {
+          "Capabilities": [
+            "AggregationNOPNULL",
+            "AggregationNOPNULLZERO",
+            "AsyncMetadataBatchRequest",
+            "AttributeHierarchy",
+            "AttributeHierarchyHierarchyFields",
+            "AttributeHierarchyUniqueFields",
+            "AttributeValueLookup",
+            "AverageCountIgnoreNullZero",
+            "CEScenarioParams",
+            "CalculatedDimension",
+            "CancelRunningRequests",
+            "CellValueOperand",
+            "ClientCapabilities",
+            "CubeBlending",
+            "CubeBlendingCustomMembers",
+            "CubeBlendingMemberSorting",
+            "CubeBlendingOutOfContext",
+            "CubeBlendingProperties",
+            "CubeBlendingReadMode",
+            "CurrentMemberFilterExtension",
+            "CustomDimensionFilterCapabilities",
+            "CustomDimensionMemberExecutionStep",
+            "CustomMemberSortOrder",
+            "DataEntryOnUnbooked",
+            "DatasourceAtService",
+            "DimensionKindChartOfAccounts",
+            "DimensionKindEPMVersion",
+            "EPMResponseListSharedVersions",
+            "ExceptionAggregationAverageNullInSelectionMember",
+            "ExceptionAggregationCountNullInSelectionMember",
+            "ExceptionAggregationDimsAndFormulas",
+            "ExceptionSettings",
+            "Exceptions",
+            "ExpandHierarchyBottomUp",
+            "ExtHierarchy",
+            "ExtendedDimensions",
+            "ExtendedDimensionsChangeDefaultRenamingAndDescription",
+            "ExtendedDimensionsCopyAllHierarchies",
+            "ExtendedDimensionsFieldMapping",
+            "ExtendedDimensionsJoinCardinality",
+            "ExtendedDimensionsJoinColumns",
+            "ExtendedDimensionsOuterJoin",
+            "ExtendedDimensionsSkip",
+            "FastPath",
+            "FixMetaDataHierarchyAttributes",
+            "FlatKeyOnHierarchicalDisplay",
+            "HierarchyDataAndExcludingFilters",
+            "HierarchyKeyTextName",
+            "HierarchyNavigationDeltaMode",
+            "HierarchyPath",
+            "HierarchyPathUniqueName",
+            "HierarchyTrapezoidFilter",
+            "HierarchyVirtualRootNode",
+            "IgnoreUnitOfNullValueInAggregation",
+            "IgnoreUnitOfZeroValueInAggregation",
+            "InputReadinessStates",
+            "ListReporting",
+            "LocaleSorting",
+            "MasterReadModeByDimensionGrouping",
+            "MaxResultRecords",
+            "MdsExpression",
+            "MetadataCubeQuery",
+            "MetadataDataCategory",
+            "MetadataDataSourceDefinitionValidation",
+            "MetadataDataSourceDefinitionValidationExposeDataSource",
+            "MetadataDefaultResultStructureResultAlignmentBottom",
+            "MetadataDimensionCanBeAggregated",
+            "MetadataDimensionDefaultMember",
+            "MetadataDimensionGroup",
+            "MetadataDimensionVisibility",
+            "MetadataDynamicVariable",
+            "MetadataExtendedDimensionVisibility",
+            "MetadataHierarchyLevels",
+            "MetadataHierarchyRestNode",
+            "MetadataHierarchyStructure",
+            "MetadataHierarchyUniqueName",
+            "MetadataIsDisplayAttribute",
+            "MetadataRepositorySuffix",
+            "MetadataSemanticType",
+            "MultiSource",
+            "Obtainability",
+            "PagingTupleCountTotal",
+            "PersistResultSet",
+            "PlanningOnCalculatedDimension",
+            "ReadMode",
+            "ReadModeRelatedBooked",
+            "RemoteBlending",
+            "RemoteBlendingBW",
+            "RequestTimeZone",
+            "RestrictedMembersConvertToFlatSelection",
+            "ResultSetAxisType",
+            "ResultSetCellDataType",
+            "ResultSetCellFormatString",
+            "ResultSetCellNumericShift",
+            "ResultSetInterval",
+            "ResultSetState",
+            "ResultSetUnitIndex",
+            "ReturnErrorForInvalidQueryModel",
+            "ReturnRestrictedAndCalculatedMembersInReadmodeBooked",
+            "ReturnedDataSelection",
+            "SP9",
+            "SemanticalErrorType",
+            "SetNullCellsUnitType",
+            "SpatialClustering",
+            "SpatialFilterSRID",
+            "StatisticalAggregations",
+            "SupportsComplexFilters",
+            "SupportsCubeBlendingAggregation",
+            "SupportsDataCellMixedValues",
+            "SupportsEncodedResultSet",
+            "SupportsEncodedResultSet2",
+            "SupportsExtendedSort",
+            "SupportsHierarchySelectionAsFlatSelection",
+            "SupportsIgnoreExternalDimensions",
+            "SupportsInAModelMetadata",
+            "SupportsMemberVisibility",
+            "SupportsSetOperand",
+            "SupportsSpatialFilter",
+            "SupportsSpatialTransformations",
+            "TechnicalAxis",
+            "Totals",
+            "TotalsAfterVisibilityFilter",
+            "UniqueAttributeNames",
+            "UseEPMVersion",
+            "ValuesRounded",
+            "Variables",
+            "VirtualDataSourceVariableValues",
+            "VisibilityFilter",
+            "VisualAggregation"
+          ],
+          "DataSource": {
+            "InstanceId": "dbd9dc79-1586-7d9a-bf24-4bc519f9c3a2",
+            "ObjectName": "/sap.epm/ProfitAndLoss_qs",
+            "SchemaName": "TENANT_6",
+            "Type": "Planning"
+          },
+          "Definition": {
+            "Dimensions": [
+              {
+                "Attributes": [
+                  {
+                    "Name": "[sap.epm:Account].name",
+                    "Obtainability": "Always"
+                  },
+                  {
+                    "Name": "[sap.epm:Account].path",
+                    "Obtainability": "Always"
+                  },
+                  {
+                    "Name": "[sap.epm:Account].key",
+                    "Obtainability": "Always"
+                  },
+                  {
+                    "Name": "[sap.epm:Account].description",
+                    "Obtainability": "Always"
+                  }
+                ],
+                "Axis": "Rows",
+                "Hierarchy": {
+                  "ExpandBottomUp": false,
+                  "HierarchyActive": true,
+                  "HierarchyName": "parentId",
+                  "InitialDrillLevel": -1,
+                  "Name": "parentId"
+                },
+                "Name": "sap.epm:Account",
+                "NonEmpty": false,
+                "ReadMode": "Master"
+              }
+            ],
+            "FixedFilter": {
+              "Selection": {
+                "SetOperand": {
+                  "Elements": [
+                    {
+                      "Comparison": "=",
+                      "Low": "InputSchedule.Filter",
+                      "LowIs": "Variable"
+                    }
+                  ],
+                  "FieldName": "[sap.epm:ProfitAndLoss_Version02.CATEGORY].[sap.epm:ProfitAndLoss_Version02.CATEGORY]"
+                }
+              }
+            },
+            "PlanningExtensions": {
+              "PlanningMode": "ForPrivateVersionsOnly"
+            },
+            "ResultSetFeatureRequest": {
+              "ResultEncoding": "None",
+              "ResultFormat": "Version2",
+              "ReturnedDataSelection": {
+                "Actions": true,
+                "CellDataType": true,
+                "CellFormat": true,
+                "CellMeasure": false,
+                "CellValueTypes": true,
+                "ExceptionAlertLevel": false,
+                "ExceptionName": false,
+                "ExceptionSettings": true,
+                "Exceptions": true,
+                "InputEnabled": false,
+                "InputReadinessStates": true,
+                "NumericRounding": true,
+                "NumericShift": true,
+                "TupleDisplayLevel": true,
+                "TupleDrillState": true,
+                "TupleElementIds": true,
+                "TupleElementIndexes": false,
+                "TupleLevel": false,
+                "TupleParentIndexes": true,
+                "UnitDescriptions": true,
+                "UnitIndex": true,
+                "UnitTypes": true,
+                "Units": true,
+                "Values": true,
+                "ValuesFormatted": true,
+                "ValuesRounded": true
+              },
+              "SubSetDescription": {
+                "ColumnFrom": 0,
+                "ColumnTo": -1,
+                "RowFrom": 0,
+                "RowTo": -1
+              },
+              "UseDefaultAttributeKey": false
+            },
+            "Sort": [],
+            "Variables": [
+              {
+                "Name": "InputSchedule.Filter",
+                "Values": {
+                  "Selection": {
+                    "SetOperand": {
+                      "Elements": [
+                        {
+                          "Comparison": "<>",
+                          "LevelOffset": 0,
+                          "Low": "Input schedule"
+                        }
+                      ],
+                      "FieldName": "[sap.epm:ProfitAndLoss_Version02.CATEGORY].[sap.epm:ProfitAndLoss_Version02.CATEGORY]"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "Language": "en"
+        },
+        "Options": []
+      }
+    },
+    "response": {
+      "status": 200,
+      "sizes": {
+        "handshake": 20867,
+        "headers": 0,
+        "body": 3146
+      },
+      "mimeType": "application/json",
+      "charset": "utf-8",
+      "contentEncoding": "gzip",
+      "header": {
+        "firstLine": "HTTP/1.1 200 ",
+        "headers": [
+          {
+            "name": "Access-Control-Allow-Credentials",
+            "value": "true"
+          },
+          {
+            "name": "Access-Control-Allow-Origin",
+            "value": "https://master-fpa73.eu2cnry.projectorca.cloud"
+          },
+          {
+            "name": "Vary",
+            "value": "accept-encoding"
+          },
+          {
+            "name": "X-SAP-BOC-PROCESS-ID",
+            "value": "38691c08c76605f6163ecb470bbb5023e88ddae9"
+          },
+          {
+            "name": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "name": "X-XSS-Protection",
+            "value": "1; mode=block"
+          },
+          {
+            "name": "Set-Cookie",
+            "value": "JSESSIONID_ARREMOTE=F4056C6A4F97CB47D6FA406A8E477CC7F9D2CCFEA1624C3A3B60BFED2583F071; Path=; Secure; HttpOnly; SameSite=None"
+          },
+          {
+            "name": "date",
+            "value": "Mon, 02 Mar 2020 06:35:13 GMT"
+          },
+          {
+            "name": "cache-control",
+            "value": "no-cache, no-store"
+          },
+          {
+            "name": "x-sap-eqs-info",
+            "value": "time-elapsed=213"
+          },
+          {
+            "name": "sap-statistics-eqs",
+            "value": "total=213,ext=212"
+          },
+          {
+            "name": "Content-Encoding",
+            "value": "gzip"
+          },
+          {
+            "name": "Server",
+            "value": "SAP"
+          },
+          {
+            "name": "Set-Cookie",
+            "value": "BIGipServereqslmofpycfhe.int.sap.eu2.hana.ondemand.com=!ewhHgC4hHC1hNInV5Qf7O5ifPCcjptbiJ0OIghjasnWM6x21nshHF9jVpHHfuqcXqiQ7mQnYp1KqjjcKhwCrsR+Uyir0RpmjSFG5yxLsnyfZMuoVTkpM61+lWbOmgG3TxxMZBMgVmKg9ofKVucBekHvuJ4wiNUk=; path=; Httponly; Secure; SameSite=None; httponly; secure"
+          },
+          {
+            "name": "x-sap-boc-approuter",
+            "value": "true"
+          },
+          {
+            "name": "sap-statistics-sac-approuter",
+            "value": "total=479, ext=235"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json;charset=utf-8"
+          },
+          {
+            "name": "Transfer-Encoding",
+            "value": "chunked"
+          },
+          {
+            "name": "Keep-Alive",
+            "value": "timeout=20"
+          },
+          {
+            "name": "Strict-Transport-Security",
+            "value": "max-age=31536000; includeSubDomains; preload"
+          },
+          {
+            "name": "Connection",
+            "value": "keep-alive"
+          }
+        ]
+      },
+      "body": {
+        "DataSource": {
+          "Alias": "",
+          "InstanceId": "dbd9dc79-1586-7d9a-bf24-4bc519f9c3a2",
+          "ObjectName": "/sap.epm/ProfitAndLoss_qs",
+          "PackageName": "",
+          "SchemaName": "TENANT_6",
+          "Type": "Planning"
+        },
+        "Grids": [
+          {
+            "Axes": [
+              {
+                "Dimensions": [
+                  {
+                    "Attributes": [
+                      {
+                        "DataType": 3,
+                        "Description": "Account",
+                        "IsKey": false,
+                        "Name": "[sap.epm:Account].name",
+                        "Obtainability": "Always",
+                        "ValueType": "String",
+                        "Values": [
+                          "400000",
+                          "400010",
+                          "400100",
+                          "410000",
+                          "410100",
+                          "410110",
+                          "410120",
+                          "410135",
+                          "500000",
+                          "500950",
+                          "530005",
+                          "530020",
+                          "600000",
+                          "600010",
+                          "600015",
+                          "600020",
+                          "600030",
+                          "600055",
+                          "600070",
+                          "600071",
+                          "600085",
+                          "610000",
+                          "640015",
+                          "650000",
+                          "660000",
+                          "700000",
+                          "COGS",
+                          "COSTOFPROD",
+                          "DISCOUNTS",
+                          "EMPLOYEEEXP",
+                          "GROSS MARGIN %",
+                          "GROSSMARGIN",
+                          "GROSSSALES",
+                          "INCOME_STMT",
+                          "IT",
+                          "KPI",
+                          "MARKETING",
+                          "NETREV",
+                          "OPERATING PROFIT",
+                          "OPERATING PROFIT %",
+                          "OTHERCOGS",
+                          "OTHEREXP",
+                          "SALESEXP",
+                          "SGA",
+                          "TAXES"
+                        ],
+                        "ValuesException": [
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0
+                        ]
+                      },
+                      {
+                        "DataType": 3,
+                        "Description": "Account",
+                        "IsKey": false,
+                        "Name": "[sap.epm:Account].path",
+                        "Obtainability": "Always",
+                        "ValueType": "String",
+                        "Values": [
+                          "{\"Name\":[\"INCOME_STMT\",\"COGS\",\"COSTOFPROD\",\"500000\"],\"Description\":[\"Income Statement\",\"Cost of Goods Sold\",\"Cost of Product\",\"COST OF GOODS SOLD\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[COGS]\",\"[sap.epm:Account].[parentId].&[COSTOFPROD]\",\"[sap.epm:Account].[parentId].&[500000]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"COGS\",\"COSTOFPROD\",\"530005\"],\"Description\":[\"Income Statement\",\"Cost of Goods Sold\",\"Cost of Product\",\"PURCHASE PRICE VARIANCE\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[COGS]\",\"[sap.epm:Account].[parentId].&[COSTOFPROD]\",\"[sap.epm:Account].[parentId].&[530005]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"COGS\",\"COSTOFPROD\"],\"Description\":[\"Income Statement\",\"Cost of Goods Sold\",\"Cost of Product\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[COGS]\",\"[sap.epm:Account].[parentId].&[COSTOFPROD]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"COGS\",\"OTHERCOGS\",\"500950\"],\"Description\":[\"Income Statement\",\"Cost of Goods Sold\",\"Other Cost of Goods Sold\",\"VENDOR CHARGEBACKS\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[COGS]\",\"[sap.epm:Account].[parentId].&[OTHERCOGS]\",\"[sap.epm:Account].[parentId].&[500950]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"COGS\",\"OTHERCOGS\",\"530020\"],\"Description\":[\"Income Statement\",\"Cost of Goods Sold\",\"Other Cost of Goods Sold\",\"FREIGHT EXPENSE\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[COGS]\",\"[sap.epm:Account].[parentId].&[OTHERCOGS]\",\"[sap.epm:Account].[parentId].&[530020]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"COGS\",\"OTHERCOGS\"],\"Description\":[\"Income Statement\",\"Cost of Goods Sold\",\"Other Cost of Goods Sold\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[COGS]\",\"[sap.epm:Account].[parentId].&[OTHERCOGS]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"COGS\"],\"Description\":[\"Income Statement\",\"Cost of Goods Sold\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[COGS]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"NETREV\",\"DISCOUNTS\",\"410000\"],\"Description\":[\"Income Statement\",\"Net Revenue\",\"Discounts\",\"SALES DISCOUNTS - PRICING ADJUSTMENTS\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[NETREV]\",\"[sap.epm:Account].[parentId].&[DISCOUNTS]\",\"[sap.epm:Account].[parentId].&[410000]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"NETREV\",\"DISCOUNTS\",\"410100\"],\"Description\":[\"Income Statement\",\"Net Revenue\",\"Discounts\",\"SALES RETURNS - AUTOMATIC POSTINGS\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[NETREV]\",\"[sap.epm:Account].[parentId].&[DISCOUNTS]\",\"[sap.epm:Account].[parentId].&[410100]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"NETREV\",\"DISCOUNTS\",\"410110\"],\"Description\":[\"Income Statement\",\"Net Revenue\",\"Discounts\",\"SALES ALLOWANCES\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[NETREV]\",\"[sap.epm:Account].[parentId].&[DISCOUNTS]\",\"[sap.epm:Account].[parentId].&[410110]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"NETREV\",\"DISCOUNTS\",\"410120\"],\"Description\":[\"Income Statement\",\"Net Revenue\",\"Discounts\",\"SALES DISCOUNTS\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[NETREV]\",\"[sap.epm:Account].[parentId].&[DISCOUNTS]\",\"[sap.epm:Account].[parentId].&[410120]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"NETREV\",\"DISCOUNTS\",\"410135\"],\"Description\":[\"Income Statement\",\"Net Revenue\",\"Discounts\",\"SALES MARKDOWNS\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[NETREV]\",\"[sap.epm:Account].[parentId].&[DISCOUNTS]\",\"[sap.epm:Account].[parentId].&[410135]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"NETREV\",\"DISCOUNTS\"],\"Description\":[\"Income Statement\",\"Net Revenue\",\"Discounts\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[NETREV]\",\"[sap.epm:Account].[parentId].&[DISCOUNTS]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"NETREV\",\"GROSSSALES\",\"400000\"],\"Description\":[\"Income Statement\",\"Net Revenue\",\"Gross Sales\",\"REVENUE\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[NETREV]\",\"[sap.epm:Account].[parentId].&[GROSSSALES]\",\"[sap.epm:Account].[parentId].&[400000]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"NETREV\",\"GROSSSALES\",\"400010\"],\"Description\":[\"Income Statement\",\"Net Revenue\",\"Gross Sales\",\"RETAIL RETURNS\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[NETREV]\",\"[sap.epm:Account].[parentId].&[GROSSSALES]\",\"[sap.epm:Account].[parentId].&[400010]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"NETREV\",\"GROSSSALES\",\"400100\"],\"Description\":[\"Income Statement\",\"Net Revenue\",\"Gross Sales\",\"REVENUE-FREIGHT\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[NETREV]\",\"[sap.epm:Account].[parentId].&[GROSSSALES]\",\"[sap.epm:Account].[parentId].&[400100]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"NETREV\",\"GROSSSALES\"],\"Description\":[\"Income Statement\",\"Net Revenue\",\"Gross Sales\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[NETREV]\",\"[sap.epm:Account].[parentId].&[GROSSSALES]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"NETREV\"],\"Description\":[\"Income Statement\",\"Net Revenue\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[NETREV]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"EMPLOYEEEXP\",\"600000\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Employee Related Expense\",\"PAYROLL EXPENSE: SALARIES\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[EMPLOYEEEXP]\",\"[sap.epm:Account].[parentId].&[600000]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"EMPLOYEEEXP\",\"600010\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Employee Related Expense\",\"PAYROLL EXPENSE: WAGES\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[EMPLOYEEEXP]\",\"[sap.epm:Account].[parentId].&[600010]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"EMPLOYEEEXP\",\"600015\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Employee Related Expense\",\"PAYROLL EXPENSE: BONUS MODEL\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[EMPLOYEEEXP]\",\"[sap.epm:Account].[parentId].&[600015]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"EMPLOYEEEXP\",\"600020\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Employee Related Expense\",\"PAYROLL BURDEN\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[EMPLOYEEEXP]\",\"[sap.epm:Account].[parentId].&[600020]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"EMPLOYEEEXP\",\"600030\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Employee Related Expense\",\"TRAINING\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[EMPLOYEEEXP]\",\"[sap.epm:Account].[parentId].&[600030]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"EMPLOYEEEXP\",\"600055\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Employee Related Expense\",\"RECRUITING EXPENSE\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[EMPLOYEEEXP]\",\"[sap.epm:Account].[parentId].&[600055]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"EMPLOYEEEXP\",\"600070\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Employee Related Expense\",\"EMPLOYEE EQUIPMENT\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[EMPLOYEEEXP]\",\"[sap.epm:Account].[parentId].&[600070]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"EMPLOYEEEXP\",\"600071\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Employee Related Expense\",\"COMPUTER ALLOCATION\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[EMPLOYEEEXP]\",\"[sap.epm:Account].[parentId].&[600071]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"EMPLOYEEEXP\",\"600085\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Employee Related Expense\",\"TUITION REIMBURSEMENT\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[EMPLOYEEEXP]\",\"[sap.epm:Account].[parentId].&[600085]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"EMPLOYEEEXP\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Employee Related Expense\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[EMPLOYEEEXP]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"IT\",\"660000\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Information Technology Expense\",\"IT Expenses\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[IT]\",\"[sap.epm:Account].[parentId].&[660000]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"IT\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Information Technology Expense\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[IT]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"MARKETING\",\"640015\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Marketing Expense\",\"MARKETING EXPENSES\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[MARKETING]\",\"[sap.epm:Account].[parentId].&[640015]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"MARKETING\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Marketing Expense\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[MARKETING]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"OTHEREXP\",\"650000\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Other Expenses\",\"Freight to Customer\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[OTHEREXP]\",\"[sap.epm:Account].[parentId].&[650000]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"OTHEREXP\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Other Expenses\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[OTHEREXP]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"SALESEXP\",\"610000\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Sales Expense\",\"TRAVEL\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[SALESEXP]\",\"[sap.epm:Account].[parentId].&[610000]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\",\"SALESEXP\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\",\"Sales Expense\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\",\"[sap.epm:Account].[parentId].&[SALESEXP]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"SGA\"],\"Description\":[\"Income Statement\",\"General and Administrative Expenses\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[SGA]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"TAXES\",\"700000\"],\"Description\":[\"Income Statement\",\"Taxes\",\"Taxes\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[TAXES]\",\"[sap.epm:Account].[parentId].&[700000]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\",\"TAXES\"],\"Description\":[\"Income Statement\",\"Taxes\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\",\"[sap.epm:Account].[parentId].&[TAXES]\"]}",
+                          "{\"Name\":[\"INCOME_STMT\"],\"Description\":[\"Income Statement\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[INCOME_STMT]\"]}",
+                          "{\"Name\":[\"KPI\",\"GROSS MARGIN %\"],\"Description\":[\"Key Performance Indicators\",\"Gross Margin %\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[KPI]\",\"[sap.epm:Account].[parentId].&[GROSS MARGIN %]\"]}",
+                          "{\"Name\":[\"KPI\",\"GROSSMARGIN\"],\"Description\":[\"Key Performance Indicators\",\"Gross Margin\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[KPI]\",\"[sap.epm:Account].[parentId].&[GROSSMARGIN]\"]}",
+                          "{\"Name\":[\"KPI\",\"OPERATING PROFIT %\"],\"Description\":[\"Key Performance Indicators\",\"Operating Profit %\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[KPI]\",\"[sap.epm:Account].[parentId].&[OPERATING PROFIT %]\"]}",
+                          "{\"Name\":[\"KPI\",\"OPERATING PROFIT\"],\"Description\":[\"Key Performance Indicators\",\"Operating Profit\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[KPI]\",\"[sap.epm:Account].[parentId].&[OPERATING PROFIT]\"]}",
+                          "{\"Name\":[\"KPI\"],\"Description\":[\"Key Performance Indicators\"],\"UniqueName\":[\"[sap.epm:Account].[parentId].&[KPI]\"]}"
+                        ],
+                        "ValuesException": [
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0
+                        ]
+                      },
+                      {
+                        "DataType": 3,
+                        "Description": "Account",
+                        "IsKey": false,
+                        "Name": "[sap.epm:Account].key",
+                        "Obtainability": "Always",
+                        "ValueType": "String",
+                        "Values": [
+                          "[sap.epm:Account].[parentId].&[400000]",
+                          "[sap.epm:Account].[parentId].&[400010]",
+                          "[sap.epm:Account].[parentId].&[400100]",
+                          "[sap.epm:Account].[parentId].&[410000]",
+                          "[sap.epm:Account].[parentId].&[410100]",
+                          "[sap.epm:Account].[parentId].&[410110]",
+                          "[sap.epm:Account].[parentId].&[410120]",
+                          "[sap.epm:Account].[parentId].&[410135]",
+                          "[sap.epm:Account].[parentId].&[500000]",
+                          "[sap.epm:Account].[parentId].&[500950]",
+                          "[sap.epm:Account].[parentId].&[530005]",
+                          "[sap.epm:Account].[parentId].&[530020]",
+                          "[sap.epm:Account].[parentId].&[600000]",
+                          "[sap.epm:Account].[parentId].&[600010]",
+                          "[sap.epm:Account].[parentId].&[600015]",
+                          "[sap.epm:Account].[parentId].&[600020]",
+                          "[sap.epm:Account].[parentId].&[600030]",
+                          "[sap.epm:Account].[parentId].&[600055]",
+                          "[sap.epm:Account].[parentId].&[600070]",
+                          "[sap.epm:Account].[parentId].&[600071]",
+                          "[sap.epm:Account].[parentId].&[600085]",
+                          "[sap.epm:Account].[parentId].&[610000]",
+                          "[sap.epm:Account].[parentId].&[640015]",
+                          "[sap.epm:Account].[parentId].&[650000]",
+                          "[sap.epm:Account].[parentId].&[660000]",
+                          "[sap.epm:Account].[parentId].&[700000]",
+                          "[sap.epm:Account].[parentId].&[COGS]",
+                          "[sap.epm:Account].[parentId].&[COSTOFPROD]",
+                          "[sap.epm:Account].[parentId].&[DISCOUNTS]",
+                          "[sap.epm:Account].[parentId].&[EMPLOYEEEXP]",
+                          "[sap.epm:Account].[parentId].&[GROSS MARGIN %]",
+                          "[sap.epm:Account].[parentId].&[GROSSMARGIN]",
+                          "[sap.epm:Account].[parentId].&[GROSSSALES]",
+                          "[sap.epm:Account].[parentId].&[INCOME_STMT]",
+                          "[sap.epm:Account].[parentId].&[IT]",
+                          "[sap.epm:Account].[parentId].&[KPI]",
+                          "[sap.epm:Account].[parentId].&[MARKETING]",
+                          "[sap.epm:Account].[parentId].&[NETREV]",
+                          "[sap.epm:Account].[parentId].&[OPERATING PROFIT %]",
+                          "[sap.epm:Account].[parentId].&[OPERATING PROFIT]",
+                          "[sap.epm:Account].[parentId].&[OTHERCOGS]",
+                          "[sap.epm:Account].[parentId].&[OTHEREXP]",
+                          "[sap.epm:Account].[parentId].&[SALESEXP]",
+                          "[sap.epm:Account].[parentId].&[SGA]",
+                          "[sap.epm:Account].[parentId].&[TAXES]"
+                        ],
+                        "ValuesException": [
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0
+                        ]
+                      },
+                      {
+                        "DataType": 3,
+                        "Description": "Account",
+                        "IsKey": false,
+                        "Name": "[sap.epm:Account].description",
+                        "Obtainability": "Always",
+                        "ValueType": "String",
+                        "Values": [
+                          "COMPUTER ALLOCATION",
+                          "COST OF GOODS SOLD",
+                          "Cost of Goods Sold",
+                          "Cost of Product",
+                          "Discounts",
+                          "EMPLOYEE EQUIPMENT",
+                          "Employee Related Expense",
+                          "FREIGHT EXPENSE",
+                          "Freight to Customer",
+                          "General and Administrative Expenses",
+                          "Gross Margin",
+                          "Gross Margin %",
+                          "Gross Sales",
+                          "IT Expenses",
+                          "Income Statement",
+                          "Information Technology Expense",
+                          "Key Performance Indicators",
+                          "MARKETING EXPENSES",
+                          "Marketing Expense",
+                          "Net Revenue",
+                          "Operating Profit",
+                          "Operating Profit %",
+                          "Other Cost of Goods Sold",
+                          "Other Expenses",
+                          "PAYROLL BURDEN",
+                          "PAYROLL EXPENSE: BONUS MODEL",
+                          "PAYROLL EXPENSE: SALARIES",
+                          "PAYROLL EXPENSE: WAGES",
+                          "PURCHASE PRICE VARIANCE",
+                          "RECRUITING EXPENSE",
+                          "RETAIL RETURNS",
+                          "REVENUE",
+                          "REVENUE-FREIGHT",
+                          "SALES ALLOWANCES",
+                          "SALES DISCOUNTS",
+                          "SALES DISCOUNTS - PRICING ADJUSTMENTS",
+                          "SALES MARKDOWNS",
+                          "SALES RETURNS - AUTOMATIC POSTINGS",
+                          "Sales Expense",
+                          "TRAINING",
+                          "TRAVEL",
+                          "TUITION REIMBURSEMENT",
+                          "Taxes",
+                          "Taxes",
+                          "VENDOR CHARGEBACKS"
+                        ],
+                        "ValuesException": [
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0
+                        ]
+                      }
+                    ],
+                    "Description": "ID",
+                    "MemberTypes": {
+                      "Encoding": "None",
+                      "Values": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    "Name": "sap.epm:Account"
+                  }
+                ],
+                "ExceptionAlertLevel": [],
+                "ExceptionName": [],
+                "Name": "ROWS",
+                "TupleCount": 45,
+                "TupleCountTotal": 45,
+                "TupleSemantic": {
+                  "Encoding": "None",
+                  "Values": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "Tuples": [
+                  {
+                    "DisplayLevel": {
+                      "Encoding": "None",
+                      "Values": [
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3
+                      ]
+                    },
+                    "DrillState": {
+                      "Encoding": "None",
+                      "Values": [
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3
+                      ]
+                    },
+                    "MemberIndexes": {
+                      "Encoding": "None",
+                      "Values": [
+                        0,
+                        1,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        2,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        3,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36,
+                        37,
+                        38,
+                        39,
+                        4,
+                        40,
+                        41,
+                        42,
+                        43,
+                        44,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9
+                      ]
+                    },
+                    "ParentIndexes": {
+                      "Encoding": "None",
+                      "Values": [
+                        -1,
+                        -1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        18,
+                        20,
+                        22,
+                        22,
+                        23,
+                        23,
+                        26,
+                        26,
+                        29,
+                        29,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        30,
+                        30,
+                        30,
+                        34,
+                        34,
+                        34,
+                        34,
+                        34,
+                        4,
+                        40,
+                        40,
+                        40,
+                        40,
+                        6,
+                        8,
+                        8,
+                        8,
+                        8,
+                        8,
+                        8,
+                        8,
+                        8,
+                        8
+                      ]
+                    },
+                    "TupleElementIds": {
+                      "Encoding": "None",
+                      "Values": [
+                        "[sap.epm:Account].[parentId].&[400000]",
+                        "[sap.epm:Account].[parentId].&[400010]",
+                        "[sap.epm:Account].[parentId].&[400100]",
+                        "[sap.epm:Account].[parentId].&[410000]",
+                        "[sap.epm:Account].[parentId].&[410100]",
+                        "[sap.epm:Account].[parentId].&[410110]",
+                        "[sap.epm:Account].[parentId].&[410120]",
+                        "[sap.epm:Account].[parentId].&[410135]",
+                        "[sap.epm:Account].[parentId].&[500000]",
+                        "[sap.epm:Account].[parentId].&[500950]",
+                        "[sap.epm:Account].[parentId].&[530005]",
+                        "[sap.epm:Account].[parentId].&[530020]",
+                        "[sap.epm:Account].[parentId].&[600000]",
+                        "[sap.epm:Account].[parentId].&[600010]",
+                        "[sap.epm:Account].[parentId].&[600015]",
+                        "[sap.epm:Account].[parentId].&[600020]",
+                        "[sap.epm:Account].[parentId].&[600030]",
+                        "[sap.epm:Account].[parentId].&[600055]",
+                        "[sap.epm:Account].[parentId].&[600070]",
+                        "[sap.epm:Account].[parentId].&[600071]",
+                        "[sap.epm:Account].[parentId].&[600085]",
+                        "[sap.epm:Account].[parentId].&[610000]",
+                        "[sap.epm:Account].[parentId].&[640015]",
+                        "[sap.epm:Account].[parentId].&[650000]",
+                        "[sap.epm:Account].[parentId].&[660000]",
+                        "[sap.epm:Account].[parentId].&[700000]",
+                        "[sap.epm:Account].[parentId].&[COGS]",
+                        "[sap.epm:Account].[parentId].&[COSTOFPROD]",
+                        "[sap.epm:Account].[parentId].&[DISCOUNTS]",
+                        "[sap.epm:Account].[parentId].&[EMPLOYEEEXP]",
+                        "[sap.epm:Account].[parentId].&[GROSS MARGIN %]",
+                        "[sap.epm:Account].[parentId].&[GROSSMARGIN]",
+                        "[sap.epm:Account].[parentId].&[GROSSSALES]",
+                        "[sap.epm:Account].[parentId].&[INCOME_STMT]",
+                        "[sap.epm:Account].[parentId].&[IT]",
+                        "[sap.epm:Account].[parentId].&[KPI]",
+                        "[sap.epm:Account].[parentId].&[MARKETING]",
+                        "[sap.epm:Account].[parentId].&[NETREV]",
+                        "[sap.epm:Account].[parentId].&[OPERATING PROFIT %]",
+                        "[sap.epm:Account].[parentId].&[OPERATING PROFIT]",
+                        "[sap.epm:Account].[parentId].&[OTHERCOGS]",
+                        "[sap.epm:Account].[parentId].&[OTHEREXP]",
+                        "[sap.epm:Account].[parentId].&[SALESEXP]",
+                        "[sap.epm:Account].[parentId].&[SGA]",
+                        "[sap.epm:Account].[parentId].&[TAXES]"
+                      ]
+                    }
+                  }
+                ],
+                "Type": "Rows"
+              },
+              {
+                "Dimensions": [],
+                "ExceptionAlertLevel": [],
+                "ExceptionName": [],
+                "Name": "COLUMNS",
+                "TupleCount": 0,
+                "TupleCountTotal": 0,
+                "TupleSemantic": {
+                  "Encoding": "None",
+                  "Values": []
+                },
+                "Tuples": [],
+                "Type": "Columns"
+              }
+            ],
+            "CellArraySizes": [
+              0,
+              0
+            ],
+            "Cells": {
+              "Actions": {
+                "Encoding": "None",
+                "Values": []
+              },
+              "CellDataType": {
+                "Encoding": "None",
+                "Values": []
+              },
+              "CellFormat": {
+                "Encoding": "None",
+                "Values": []
+              },
+              "CellValueTypes": {
+                "Encoding": "None",
+                "Values": []
+              },
+              "ExceptionSettingIndex": {
+                "Encoding": "None",
+                "Values": []
+              },
+              "Exceptions": {
+                "Encoding": "None",
+                "Values": []
+              },
+              "InputReadinessIndex": {
+                "Encoding": "None",
+                "Values": []
+              },
+              "NumericRounding": {
+                "Encoding": "None",
+                "Values": []
+              },
+              "NumericShift": {
+                "Encoding": "None",
+                "Values": []
+              },
+              "UnitDescriptions": {
+                "Encoding": "None",
+                "Values": []
+              },
+              "UnitIndex": {
+                "Encoding": "None",
+                "Values": []
+              },
+              "UnitTypes": {
+                "Encoding": "None",
+                "Values": []
+              },
+              "Units": {
+                "Encoding": "None",
+                "Values": []
+              },
+              "Values": {
+                "Encoding": "None",
+                "Values": []
+              },
+              "ValuesFormatted": {
+                "Encoding": "None",
+                "Values": []
+              },
+              "ValuesRounded": {
+                "Encoding": "None",
+                "Values": []
+              }
+            },
+            "Description": "",
+            "ExceptionSettings": [],
+            "HasErrors": false,
+            "Id": "",
+            "InputEnabled": true,
+            "InputReadinessStates": [
+              [
+                {
+                  "Flag": "InvalidCell"
+                }
+              ]
+            ],
+            "Interval": false,
+            "Messages": [
+              {
+                "Number": 42802,
+                "Text": "Cube cache : Result was read from cache (post process)",
+                "Type": 4
+              }
+            ],
+            "Name": "",
+            "QueryId": "",
+            "ResultEncoding": "None",
+            "ResultFormat": "Version2",
+            "ResultSetState": 0,
+            "SubSetDescription": {
+              "ColumnFrom": 0,
+              "ColumnTo": 1,
+              "RowFrom": 0,
+              "RowTo": 45
+            },
+            "Units": []
+          }
+        ],
+        "PerformanceData": {
+          "Measurements": [
+            {
+              "Calls": 1,
+              "Description": "Request parsing",
+              "Time": 0.011047
+            },
+            {
+              "Calls": 5,
+              "Description": "Metadata read",
+              "Time": 0.00984799999999999
+            },
+            {
+              "Calls": 2,
+              "Description": "Query enhancing (metadata)",
+              "Time": 0.04068199999999999
+            },
+            {
+              "Calls": 4,
+              "Description": "Metadata Cache",
+              "Time": 0.003954
+            },
+            {
+              "Calls": 1,
+              "Description": "Result set grid to JSON",
+              "Time": 0.002352
+            },
+            {
+              "Calls": 2,
+              "Description": "Overall runtime",
+              "Time": 0.10525
+            },
+            {
+              "Calls": 2,
+              "Description": "Database SQL",
+              "Time": 0.004604
+            },
+            {
+              "Calls": 1,
+              "Description": "View/Cube deserialization",
+              "Time": 0.013166
+            },
+            {
+              "Calls": 1,
+              "Description": "View/Cube decompression",
+              "Time": 0.000032
+            },
+            {
+              "Calls": 1,
+              "Description": "Request processing",
+              "Time": 0.0901189999999999
+            },
+            {
+              "Calls": 1,
+              "Description": "Request start wait",
+              "Time": 0.00012
+            },
+            {
+              "Calls": 1,
+              "Description": "Hierarchy read",
+              "Time": 0.000642
+            },
+            {
+              "Calls": 1,
+              "Description": "Cube count",
+              "Value": 1
+            },
+            {
+              "Calls": 3,
+              "Description": "EPM: Overall runtime",
+              "Time": 0.000830999999999999
+            }
+          ],
+          "Runtime": 0.10525,
+          "SessionId": "72D87F44929A58458A942A85750F9343",
+          "StepId": "",
+          "Timestamp": "2020-03-02 06:35:13.6100000",
+          "UserName": "6_SOURAV"
+        }
+      }
+    },
+    "name": "GetResponse"
+  }
+]

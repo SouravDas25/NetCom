@@ -89,4 +89,12 @@ export class HomeComponent implements OnInit {
       console.log(e)
     }
   }
+
+  reset() {
+    this.networkLog = [];
+    this.items = [];
+    this.selectedItem = null;
+    if (this.netCmpService.isCharlesRunning) this.netCmpService.runOrStopCharles();
+    this.netCmpService = new NetCmpService();
+  }
 }
