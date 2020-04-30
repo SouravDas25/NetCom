@@ -101,7 +101,7 @@
     "@fortawesome/free-solid-svg-icons": "5.12.1",
     "@ng-bootstrap/ng-bootstrap": "6.0.1",
     "bootstrap": "4.4.1",
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "lowdb": "1.0.0",
     "multimap": "1.1.0",
     "ngx-bootstrap": "5.5.0",
